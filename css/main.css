@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    font-family: helvetica;
+    background-color: #fdfdfd;
+}
+
+header {
+    padding: 5px 200px 5px 200px;
+    background-color: #333e4b;
+    color: white;
+    font-size: 14px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 1px 20px 1px #b7b7b7;
+    min-width: 1024px;
+}
+
+header > a,
+header > a:visited,
+header > .tabs > a,
+header > .tabs > a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+header > .logo {
+    margin-right: 150px;
+}
+
+header > .tabs {
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header > .lk-show-menu {
+    margin-left: auto;
+    white-space: pre;
+}
+
+h3 {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+h4 {
+    margin-top: 30px;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+main > section {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+main > .breadcrumbs {
+    margin-top: 30px;
+}
+
+.breadcrumbs, .breadcrumbs > * {
+    font-size: 12px;
+    color: #818181;
+}
+
+main > .banners {
+    margin: 20px 0 35px 0;
+    padding: 5px 200px 5px 200px;
+    min-width: 1024px;
+    background-color: #ebebeb;
+    font-size: 16px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+footer {
+    margin: 120px 0 0 0;
+    padding: 5px 200px 5px 200px;
+    background-color: #333e4b;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    box-shadow: 0px 1px 20px 1px #b7b7b7;
+    min-width: 1024px;
+}
+
+footer > a,
+footer > a:hover,
+footer > a:visited {
+    color: white;
+}
+
+.oferta {
+    padding: 5px 200px 5px 200px;
+    min-width: 1024px;
+    background-color: #0d131b;
+    color: #a6aaae;
+    font-size: 12px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+.oferta > a,
+.oferta > a:hover,
+.oferta > a:visited {
+    color: #a6aaae;
+    text-decoration: underline;
+}
+
+
+
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.marg-t {
+    margin-top: 20px;
+}
+
+.big-marg-t {
+    margin-top: 35px;
+}
+
+.marg-r {
+    margin-right: 25px;
+}
+
+.big-marg-r {
+    margin-right: 40px;
+}
+
+.small-marg-t {
+    margin-top: 8px;
+}
+
+.f16 {
+    font-size: 16px;
+}
+
+.hidden {
+    display: none;
+}
