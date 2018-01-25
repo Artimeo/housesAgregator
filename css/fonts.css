@@ -20,6 +20,16 @@
 
 @font-face{
     font-family: firasans;
+    src: url('/fonts/Fira-Sans/firasans-semibold.eot');
+    src: url('/fonts/Fira-Sans/firasans-semibold.eot?#iefix') format('embeded-opentype'),
+    url('/fonts/Fira-Sans/firasans-semibold.woff') format('woff'),
+    url('/fonts/Fira-Sans/firasans-semibold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: firasans;
     src: url('/fonts/Fira-Sans/firasans-bold.eot');
     src: url('/fonts/Fira-Sans/firasans-bold.eot?#iefix') format('embeded-opentype'),
     url('/fonts/Fira-Sans/firasans-bold.woff') format('woff'),
