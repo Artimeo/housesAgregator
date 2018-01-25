@@ -1,7 +1,22 @@
+@import "/css/fonts.css";
+
 body {
     margin: 0;
-    font-family: helvetica;
+    font-family: firasans;
+    font-weight: 400;
+    font-style: normal;
     background-color: #fdfdfd;
+}
+
+h3 {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+h4 {
+    margin-top: 30px;
+    font-size: 14px;
+    margin-bottom: 30px;
 }
 
 header {
@@ -40,27 +55,16 @@ header > .lk-show-menu {
     white-space: pre;
 }
 
-h3 {
-    margin-top: 30px;
-    font-size: 18px;
-}
-
-h4 {
-    margin-top: 30px;
-    font-size: 14px;
-    margin-bottom: 30px;
-}
-
 main > section {
     margin-left: 200px;
     margin-right: 200px;
 }
 
-main > .breadcrumbs {
+.breadcrumbs {
     margin-top: 30px;
 }
 
-.breadcrumbs, .breadcrumbs > * {
+.breadcrumbs > * {
     font-size: 12px;
     color: #818181;
 }
@@ -78,6 +82,11 @@ main > .banners {
     height: 100px;
 }
 
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
 footer {
     margin: 120px 0 0 0;
     padding: 5px 200px 5px 200px;
@@ -93,9 +102,9 @@ footer {
     min-width: 1024px;
 }
 
-footer > a,
-footer > a:hover,
-footer > a:visited {
+footer a,
+footer a:hover,
+footer a:visited {
     color: white;
 }
 
@@ -118,8 +127,6 @@ footer > a:visited {
     color: #a6aaae;
     text-decoration: underline;
 }
-
-
 
 .clearfix:after{
     content: "";

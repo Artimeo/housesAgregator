@@ -1,0 +1,29 @@
+@font-face{
+    font-family: firasans;
+    src: url('/fonts/Fira-Sans/firasans-light.eot');
+    src: url('/fonts/Fira-Sans/firasans-light.eot?#iefix') format('embeded-opentype'),
+    url('/fonts/Fira-Sans/firasans-light.woff') format('woff'),
+    url('/fonts/Fira-Sans/firasans-light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: firasans;
+    src: url('/fonts/Fira-Sans/firasans-regular.eot');
+    src: url('/fonts/Fira-Sans/firasans-regular.eot?#iefix') format('embeded-opentype'),
+    url('/fonts/Fira-Sans/firasans-regular.woff') format('woff'),
+    url('/fonts/Fira-Sans/firasans-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: firasans;
+    src: url('/fonts/Fira-Sans/firasans-bold.eot');
+    src: url('/fonts/Fira-Sans/firasans-bold.eot?#iefix') format('embeded-opentype'),
+    url('/fonts/Fira-Sans/firasans-bold.woff') format('woff'),
+    url('/fonts/Fira-Sans/firasans-bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
