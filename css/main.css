@@ -128,6 +128,17 @@ footer a:visited {
     text-decoration: underline;
 }
 
+.block {
+    min-width: 200px;
+    min-height: 100px;
+    box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.35);
+    background-color: white;
+}
+
+.house-info {
+    margin-left: 25px;
+    width: 100%;
+}
 .clearfix:after{
     content: "";
     display: block;
