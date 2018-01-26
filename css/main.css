@@ -1,4 +1,5 @@
 @import "/css/fonts.css";
+@import "/css/scrollbar.css";
 
 body {
     margin: 0;
@@ -87,6 +88,11 @@ main > .banners {
     flex-wrap: nowrap;
 }
 
+.container {
+    margin: 0;
+    padding: 0;
+}
+
 footer {
     margin: 120px 0 0 0;
     padding: 5px 200px 5px 200px;
@@ -157,21 +163,28 @@ footer a:visited {
 }
 
 .house-pic {
-
+    width: 360px;
+    height: 200px;
 }
 
 .block__house-info {
     margin-left: 25px;
     width: 100%;
-    height: 200px;
+    height: 160px;
     overflow: hidden;
-    max-height: 200px;
 }
 
-.jspVerticalBar {position: absolute; 	top: 0;	right: 0;  	width: 5px; height: 100%; background: #e5e8ec; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;}
-.jspTrack{	background: #e5e8ec; position: relative; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;}
-.jspDrag{background: #b6bdc5;position: relative;top: 0;left: 0;cursor: pointer;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
-.jspCorner{	background: #eeeef4; float: left; height: 100%;}
+.block__house-pair {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+.block__house-pair ul {
+
+}
 
 
 
