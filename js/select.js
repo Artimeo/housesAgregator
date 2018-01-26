@@ -105,3 +105,5 @@ function _select_option(indx,selc){
   select_.onchange();
   salir_select(selc);
 }
+
+jQuery('.scroll-pane').jScrollPane();
