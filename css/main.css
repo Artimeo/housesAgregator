@@ -197,6 +197,18 @@ footer a:visited {
     vertical-align: top;
 }
 
+.block__sales {
+    padding: 0;
+}
+
+.block__sales .sale {
+    padding: 10px;
+    height: 120px;
+}
+
+.block__sales .sale:nth-child(2n) {
+    background-color: #f7f4f4;
+}
 .goods {
     justify-content: space-between;
     padding: 0 40px;
