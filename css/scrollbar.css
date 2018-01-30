@@ -1,4 +1,5 @@
 .jspVerticalBar {position: absolute; 	top: 0;	right: 0;  	width: 5px; height: 100%; background: #e5e8ec; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;}
 .jspTrack{	background: #e5e8ec; position: relative; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;}
 .jspDrag{background: #b6bdc5;position: relative;top: 0;left: 0;cursor: pointer;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+.jspDrag:hover, .jspDrag:active{background: #9ea5ad;position: relative;top: 0;left: 0;cursor: pointer;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
 .jspCorner{	background: #eeeef4; float: left; height: 100%;}
