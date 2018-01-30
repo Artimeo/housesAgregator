@@ -197,13 +197,85 @@ footer a:visited {
     vertical-align: top;
 }
 
+
 .block__sales {
     padding: 0;
 }
 
+.sale {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
 .block__sales .sale {
     padding: 20px;
-    height: 120px; /*min-height*/
+    min-height: 120px;
+    justify-content: space-between;
+}
+
+.block__sales .sale:nth-child(2n) {
+    background-color: #f7f4f4;
+}
+
+.sale-left {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sale-right {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    text-align: right;
+}
+
+
+.sale__date,
+.news__date,
+.news__h,
+.sale__h,
+.sale ul {
+    margin: 0;
+}
+
+.sale ul li { white-space: nowrap;}
+
+.sale__info {
+    max-width: 580px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sale__h{
+    margin-bottom: 5px;
+}
+
+.sale__cost {
+    margin: 0;
+    font-size: 21px;
+    white-space: nowrap;
+}
+
+.sale__owner {
+    color: #818181;
+    font-weight: normal;
+    margin: 0 0 5px 0;
+}
+
+.sale__view,
+.sale__view:hover,
+.sale__view:visited {
+    font-weight: 400;
+    color: #5b86e7;
+    text-decoration: underline;
+}
+
+.sale__date, .news__date {
+    color: #818181;
+    font-weight: 400;
 }
 
 .news {
@@ -214,24 +286,18 @@ footer a:visited {
 .news:first-child { padding-top: 0;}
 .news:last-child { padding-bottom: 0; border: 0;}
 
-
-.block__sales .sale:nth-child(2n) {
-    background-color: #f7f4f4;
+.sale__housepic {
+    display: inline-flex;
+    margin: 20px 0 0 20px;
+    background-image: url('/images/house.png');
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 180px;
+    background-size: contain;
 }
 
-.sale__date, .sale__h, .sale ul, .news__date, .news__h {
-    margin: 0;
-}
 
-.sale__info {
-    max-width: 580px;
-    justify-content: space-between;
-}
 
-.sale__date, .news__date {
-    color: #818181;
-    font-weight: 400;
-}
 
 .goods {
     justify-content: space-between;
