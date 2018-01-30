@@ -202,13 +202,37 @@ footer a:visited {
 }
 
 .block__sales .sale {
-    padding: 10px;
-    height: 120px;
+    padding: 20px;
+    height: 120px; /*min-height*/
 }
+
+.news {
+    padding: 15px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e1e1e1;
+}
+.news:first-child { padding-top: 0;}
+.news:last-child { padding-bottom: 0; border: 0;}
+
 
 .block__sales .sale:nth-child(2n) {
     background-color: #f7f4f4;
 }
+
+.sale__date, .sale__h, .sale ul, .news__date, .news__h {
+    margin: 0;
+}
+
+.sale__info {
+    max-width: 580px;
+    justify-content: space-between;
+}
+
+.sale__date, .news__date {
+    color: #818181;
+    font-weight: 400;
+}
+
 .goods {
     justify-content: space-between;
     padding: 0 40px;
