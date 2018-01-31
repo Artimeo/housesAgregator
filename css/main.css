@@ -66,6 +66,16 @@ main > section {
     margin-right: 200px;
 }
 
+.map {
+  background-image: url(/images/map-bg.png);
+  background-repeat: no-repeat;
+  height: 900px;
+  background-size: cover;
+
+  z-index: -1;
+  padding: 20px 60px;
+}
+
 .breadcrumbs {
     margin-top: 30px;
 }
