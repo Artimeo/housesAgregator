@@ -368,6 +368,32 @@ footer a:visited {
     background-image: url('/images/ui-bg.png');
 }
 
+.radio {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+}
+.radio label {
+    font-weight: 400;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-right: 1px solid #d7d7d7;
+    box-sizing: border-box;
+}
+.radio label:last-child {
+    border: none;
+}
+
+.radio input[type=radio] {
+    display: none;
+}
+
+.radio input[type=radio]:checked + label{
+    background-image: url('/images/ui-bg.png');
+}
 
 
 
