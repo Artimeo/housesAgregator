@@ -9,15 +9,32 @@
     <link rel="stylesheet" href="./css/jquery.jscrollpane.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/select.css" />
+    <link rel="stylesheet" href="./css/slider.css" />
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script src="./js/jquery.mousewheel.js"></script>
-    <script src="./js/jquery.jscrollpane.js"></script>
-    <script src="./js/select.js"></script>
+    <script type="text/javascript" src="js/jquery-1.6.1.min.js" ></script>
+    <script type="text/javascript" src="./js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="./js/jquery.ui-slider.js"></script>
+    <script type="text/javascript" src="./js/jquery.jscrollpane.js"></script>
+    <script type="text/javascript" src="./js/select.js"></script>
 
     <script type="text/javascript">
     	$(document).ready(function()
     	{
     		$('.scroll-pane').jScrollPane();
+        $('#price-slider').slider({
+          min: 0,
+          max: 1000,
+          values: [0,1000],
+          range: true,
+          stop: function(event, ui) {
+            $('#price-min').val($('#price-slider').slider('values', 0));
+            $('#price-max').val($('#price-slider').slider('values', 1));
+          },
+          slide: function(event, ui) {
+            $('#price-min').val($('#price-slider').slider('values', 0));
+            $('#price-max').val($('#price-slider').slider('values', 1));
+          }
+        });
     	});
     </script>
 
@@ -57,12 +74,63 @@
           <button class="ui-button ui-button-clear clearfix">
             <span>Очистить</span>
           </button>
-          <div class="block">
-            <div class="radio">
-            	<input type="radio" name="gender" value="buy" checked>
-            	<label for="male">купить</label>
-            	<input type="radio" name="gender" value="sell">
-            	<label for="female">снять</label>
+          <div class="block" style="padding: 12px 0">
+            <div class="filter__section">
+              <form class="ui-radio">
+              	<input id="buy" type="radio" name="gender" value="buy" checked>
+              	<label for="buy">купить</label>
+              	<input id="rent" type="radio" name="gender" value="sell">
+              	<label for="rent">снять</label>
+              </form>
+            </div>
+            <div class="filter__section">
+              <form class="ui-radio">
+              	<input id="type-all" type="radio" name="gender" value="type-all" checked>
+              	<label for="type-all">все</label>
+              	<input id="type-apartment" type="radio" name="gender" value="type-apartment">
+              	<label for="type-apartment">квартира</label>
+                <input id="type-house" type="radio" name="gender" value="type-house">
+              	<label for="type-house">дом</label>
+                <input id="type-land" type="radio" name="gender" value="type-land">
+              	<label for="type-land">участок</label>
+              </form>
+            </div>
+            <div class="filter__section">
+              <span class="filter__h">Количество комнат</span>
+              <form class="ui-radio">
+              	<input id="rooms-studio" type="radio" name="gender" value="rooms-studio">
+              	<label for="rooms-studio">студия</label>
+              	<input id="rooms-1" type="radio" name="gender" value="rooms-1" checked>
+              	<label for="rooms-1">1к</label>
+                <input id="rooms-2" type="radio" name="gender" value="rooms-2">
+              	<label for="rooms-2">2к</label>
+                <input id="rooms-3" type="radio" name="gender" value="rooms-3">
+              	<label for="rooms-3">3к</label>
+                <input id="rooms-4+" type="radio" name="gender" value="rooms-3">
+              	<label for="rooms-4+">4к</label>
+              </form>
+            </div>
+            <div class="filter__section">
+              <form class="ui-radio">
+              	<input id="houses-all" type="radio" name="gender" value="houses-all" checked>
+              	<label for="houses-all">все</label>
+              	<input id="houses-old" type="radio" name="gender" value="houses-old">
+              	<label for="houses-old">вторичное жильё</label>
+                <input id="houses-new" type="radio" name="gender" value="houses-new">
+              	<label for="houses-new">новостройки</label>
+              </form>
+            </div>
+            <div class="filter__section">
+              <span class="filter__h">Цена, руб.</span>
+              <form class="ui-radio">
+              	<input id="price-type-common" type="radio" name="gender" value="price-type-common" checked>
+              	<label for="price-type-common">общая</label>
+              	<input id="price-type-per" type="radio" name="gender" value="price-type-per">
+              	<label for="price-type-per">квадратный метр</label>
+              </form>
+              <input type="text" id="price-min" value="0"/>
+              <input type="text" id="price-max" value="1000"/>
+              <div class="marg-t" id="price-slider"></div>
             </div>
           </div>
         </section>

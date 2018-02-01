@@ -331,6 +331,25 @@ footer a:visited {
     width: 340px;
 }
 
+.filter__section {
+    padding: 12px;
+    border-bottom: 1px solid #d7d7d7;
+}
+.filter__section:first-child {
+    padding-top: 0;
+}
+.filter__section:last-child {
+    padding-bottom: 0;
+    border: none;
+}
+
+.filter__h {
+    font-size: 12px;
+    font-weight: 400;
+    color: #818181;
+    position: relative;
+    bottom: 5px;
+}
 
 
 .ui-button,
@@ -368,13 +387,15 @@ footer a:visited {
     background-image: url('/images/ui-bg.png');
 }
 
-.radio {
+.ui-radio {
     display: flex;
+    white-space: nowrap;
     justify-content: space-around;
     border: 1px solid #d7d7d7;
     border-radius: 3px;
+    overflow: hidden;
 }
-.radio label {
+.ui-radio label {
     font-weight: 400;
     cursor: pointer;
     display: block;
@@ -382,19 +403,21 @@ footer a:visited {
     text-align: center;
     border-right: 1px solid #d7d7d7;
     box-sizing: border-box;
+    padding: 5px 15px;
+    user-select: none;
 }
-.radio label:last-child {
+.ui-radio label:last-child {
     border: none;
 }
 
-.radio input[type=radio] {
+.ui-radio input,
+.checkbox input {
     display: none;
 }
 
-.radio input[type=radio]:checked + label{
+.ui-radio input[type=radio]:checked + label {
     background-image: url('/images/ui-bg.png');
 }
-
 
 
 
