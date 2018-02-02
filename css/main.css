@@ -1,12 +1,21 @@
 @import "/css/fonts.css";
 @import "/css/scrollbar.css";
 
+
 body {
     margin: 0;
     font-family: firasans;
     font-weight: 400;
     font-style: normal;
     background-color: #fdfdfd;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+.no-focus {
+  outline: none;
 }
 
 h3 {
@@ -387,7 +396,7 @@ footer a:visited {
     background-image: url('/images/ui-bg.png');
 }
 
-.ui-radio {
+.ui-radio, .ui-input-range {
     display: flex;
     white-space: nowrap;
     justify-content: space-around;
@@ -420,6 +429,27 @@ footer a:visited {
 }
 
 
+.ui-input-range {
+    justify-content: space-between;
+    border: none;
+}
+
+.ui-input-range input {
+    height: 32px;
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+    width: 25%;
+    color: #cccccc;
+    padding: 0 10px;
+}
+.ui-input-range input::selection {
+    background-color: #cccccc;
+    color: white;
+}
+
+.ui-slider {
+    margin: 10px 5px;
+}
 
 
 

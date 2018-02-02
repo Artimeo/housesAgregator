@@ -16,25 +16,12 @@
     <script type="text/javascript" src="./js/jquery.ui-slider.js"></script>
     <script type="text/javascript" src="./js/jquery.jscrollpane.js"></script>
     <script type="text/javascript" src="./js/select.js"></script>
+    <script type="text/javascript" src="./js/slider.js"></script>
 
     <script type="text/javascript">
     	$(document).ready(function()
     	{
     		$('.scroll-pane').jScrollPane();
-        $('#price-slider').slider({
-          min: 0,
-          max: 1000,
-          values: [0,1000],
-          range: true,
-          stop: function(event, ui) {
-            $('#price-min').val($('#price-slider').slider('values', 0));
-            $('#price-max').val($('#price-slider').slider('values', 1));
-          },
-          slide: function(event, ui) {
-            $('#price-min').val($('#price-slider').slider('values', 0));
-            $('#price-max').val($('#price-slider').slider('values', 1));
-          }
-        });
     	});
     </script>
 
@@ -128,9 +115,19 @@
               	<input id="price-type-per" type="radio" name="gender" value="price-type-per">
               	<label for="price-type-per">квадратный метр</label>
               </form>
-              <input type="text" id="price-min" value="0"/>
-              <input type="text" id="price-max" value="1000"/>
-              <div class="marg-t" id="price-slider"></div>
+              <form class="ui-input-range" style="margin-top: 10px">
+                <input type="number" step="1" id="price-min" value="0"/>
+                <input type="number" step="1" id="price-max" value="1000"/>
+              </form>
+              <div class="ui-slider" id="price-slider"></div>
+            </div>
+            <div class="filter__section">
+              <span class="filter__h">Метраж, кв. м.</span>
+              <form class="ui-input-range">
+                <input type="number" step="1" id="area-min" value="0"/>
+                <input type="number" step="1" id="area-max" value="1000"/>
+              </form>
+              <div class="ui-slider" id="area-slider"></div>
             </div>
           </div>
         </section>
