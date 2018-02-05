@@ -23,6 +23,22 @@
     	{
     		$('.scroll-pane').jScrollPane();
     	});
+
+      $(document).ready(function() //Включение слайдеров
+      {
+        sliderInit( $('#price-slider'), $('#price-min'), $('#price-max'),
+          $('#price-min').val(), $('#price-max').val()
+        )
+        sliderInit( $('#area-slider'), $('#area-min'), $('#area-max'),
+          $('#area-min').val(), $('#area-max').val()
+        )
+        sliderInit( $('#floor-slider'), $('#floor-min'), $('#floor-max'),
+          $('#floor-min').val(), $('#floor-max').val()
+        )
+        sliderInit( $('#year-slider'), $('#year-min'), $('#year-max'),
+          $('#year-min').val(), $('#year-max').val()
+        )
+      });
     </script>
 
   </head>
@@ -116,18 +132,52 @@
               	<label for="price-type-per">квадратный метр</label>
               </form>
               <form class="ui-input-range" style="margin-top: 10px">
-                <input type="number" step="1" id="price-min" value="0"/>
-                <input type="number" step="1" id="price-max" value="1000"/>
+                <input type="number" step="1" id="price-min" value="0" min="0"/>
+                <input type="number" step="1" id="price-max" value="1000" max="1000"/>
               </form>
               <div class="ui-slider" id="price-slider"></div>
             </div>
             <div class="filter__section">
               <span class="filter__h">Метраж, кв. м.</span>
               <form class="ui-input-range">
-                <input type="number" step="1" id="area-min" value="0"/>
-                <input type="number" step="1" id="area-max" value="1000"/>
+                <input type="number" step="1" id="area-min" value="0" min="0"/>
+                <input type="number" step="1" id="area-max" value="1000" max="1000"/>
               </form>
               <div class="ui-slider" id="area-slider"></div>
+            </div>
+            <div class="filter__section">
+              <span class="filter__h">Этаж</span>
+              <form class="ui-input-range">
+                <input type="number" step="1" id="floor-min" value="1" min="1"/>
+                <input type="number" step="1" id="floor-max" value="5" max="5"/>
+              </form>
+              <div class="ui-slider" id="floor-slider"></div>
+              <form class="ui-checkbox">
+                <input id="floor-not-last" type="checkbox" value="floor-not-last" checked>
+                <label for="floor-not-last">не последний</label>
+              	<input id="floor-not-first" type="checkbox" value="floor-not-first">
+              	<label for="floor-not-first">не первый</label>
+              </form>
+            </div>
+            <div class="filter__section">
+              <span class="filter__h">Год постройки дома</span>
+              <form class="ui-input-range">
+                <input type="number" step="1" id="year-min" value="1900" min="1900"/>
+                <input type="number" step="1" id="year-max" value="2018" max="2018"/>
+              </form>
+              <div class="ui-slider" id="year-slider"></div>
+            </div>
+            <div class="filter__section">
+              <form class="ui-checkbox">
+                <input id="house-params-1" type="checkbox" value="house-params-1" checked>
+                <label for="house-params-1">не торец</label>
+              	<input id="house-params-2" type="checkbox" value="house-params-2">
+              	<label for="house-params-2">скрыть агенства</label>
+                <input id="house-params-3" type="checkbox" value="house-params-3">
+              	<label for="house-params-3">падает в цене</label>
+                <input id="house-params-4" type="checkbox" value="house-params-4">
+              	<label for="house-params-4">самые выгодные</label>
+              </form>
             </div>
           </div>
         </section>

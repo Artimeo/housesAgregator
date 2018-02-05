@@ -420,7 +420,7 @@ footer a:visited {
 }
 
 .ui-radio input,
-.checkbox input {
+.ui-checkbox input {
     display: none;
 }
 
@@ -432,6 +432,7 @@ footer a:visited {
 .ui-input-range {
     justify-content: space-between;
     border: none;
+    margin-bottom: 15px;
 }
 
 .ui-input-range input {
@@ -449,17 +450,56 @@ footer a:visited {
 
 .ui-slider {
     margin: 10px 5px;
+    right: 2px;
 }
 
+.ui-checkbox {
+    border: none;
+    font-weight: 400;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.ui-checkbox label {
+    padding-left: 4px;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    user-select: none;
+    color: #818181;
+    white-space: nowrap;
+    width: 46%;
+}
+
+.ui-checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+    background-color: white;
+    top: 4px;
+    right: 4px;
+}
+
+.ui-checkbox input:checked + label::after {
+    content: "";
+    background-image: url("/images/checkbox.png");
+    display: inline-block;
+    width: 18px;
+    height: 14px;
+    position: absolute;
+    top: 3px;
+    left: 1px;
+}
 
 
 
 .unselect {
     user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
 }
 
 .clearfix:after{

@@ -1,106 +1,54 @@
-//Price slider
-
-$(document).ready(function()
+function sliderInit(slider_id, slider_min, slider_max, _min, _max)
 {
-  $('#price-slider').slider({
-    min: 0,
-    max: 1000,
-    values: [0,1000],
+  slider_id.slider({
+    min: parseInt(_min),
+    max: parseInt(_max),
+    values: [parseInt(_min), parseInt(_max)],
     range: true,
     animate: true,
     stop: function(event, ui) {
-      $('#price-min').val($('#price-slider').slider('values', 0));
-      $('#price-max').val($('#price-slider').slider('values', 1));
+      slider_min.val(slider_id.slider('values', 0));
+      slider_max.val(slider_id.slider('values', 1));
     },
     slide: function(event, ui) {
-      $('#price-min').val($('#price-slider').slider('values', 0));
-      $('#price-max').val($('#price-slider').slider('values', 1));
+      slider_min.val(slider_id.slider('values', 0));
+      slider_max.val(slider_id.slider('values', 1));
     }
   });
 
-  $('#price-min').change(function() { //Проверка min < max
-    var min = $('#price-min').val();
-    var max = $('#price-max').val();
+  slider_min.change(function() { //Проверка min < max
+    var min = slider_min.val();
+    var max = slider_max.val();
 
     if (parseInt(min) > parseInt(max)) {
       min = max;
-      $('#price-min').val(min);
+      slider_min.val(min);
     }
-    $('#price-slider').slider('values', 0, min);
+    slider_id.slider('values', 0, min);
   });
 
-  $('#price-max').change(function() { //Выход за границы max
-    var min = $('#price-min').val();
-    var max = $('#price-max').val();
-    var over = $('#price-slider').slider('option', 'max');
+  slider_max.change(function() { //Выход за границы max
+    var min = slider_min.val();
+    var max = slider_max.val();
+    var over = slider_id.slider('option', 'max');
 
     if (max > over) {
       max = over;
-      $('#price-max').val(max);
+      slider_max.val(max);
     }
 
     if (parseInt(min) > parseInt(max)) {
       max = min;
-      $('#price-max').val(max);
+      slider_max.val(max);
     }
-    $('#price-slider').slider('values', 1, max);
+    slider_id.slider('values', 1, max);
   });
-});
-
-//Area slider
-
-$(document).ready(function()
-{
-  $('#area-slider').slider({
-    min: 0,
-    max: 1000,
-    values: [0,1000],
-    range: true,
-    animate: true,
-    stop: function(event, ui) {
-      $('#area-min').val($('#area-slider').slider('values', 0));
-      $('#area-max').val($('#area-slider').slider('values', 1));
-    },
-    slide: function(event, ui) {
-      $('#area-min').val($('#area-slider').slider('values', 0));
-      $('#area-max').val($('#area-slider').slider('values', 1));
-    }
-  });
-
-  $('#area-min').change(function() { //Проверка min < max
-    var min = $('#area-min').val();
-    var max = $('#area-max').val();
-
-    if (parseInt(min) > parseInt(max)) {
-      min = max;
-      $('#area-min').val(min);
-    }
-    $('#area-slider').slider('values', 0, min);
-  });
-
-  $('#area-max').change(function() { //Выход за границы max
-    var min = $('#area-min').val();
-    var max = $('#area-max').val();
-    var over = $('#area-slider').slider('option', 'max');
-
-    if (max > over) {
-      max = over;
-      $('#area-max').val(max);
-    }
-
-    if (parseInt(min) > parseInt(max)) {
-      max = min;
-      $('#area-max').val(max);
-    }
-    $('#area-slider').slider('values', 1, max);
-  });
-});
+};
 
 $(document).ready(function()
 {
   $('.ui-input-range input').focus(function(){
-    if(this.value == this.defaultValue){
-      this.select();
-    }
+    //if(this.value == this.defaultValue){ this.select(); } //Выделять только default value
+    this.select(); //Выделять всегда
   });
 });
