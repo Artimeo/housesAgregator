@@ -340,6 +340,10 @@ footer a:visited {
     width: 340px;
 }
 
+.filter__block {
+    padding: 12px 0;
+}
+
 .filter__section {
     padding: 12px;
     border-bottom: 1px solid #d7d7d7;
@@ -379,6 +383,11 @@ footer a:visited {
     border-radius: 3px;
     cursor: pointer;
     vertical-align: top;
+}
+
+.ui-button-filter > img {
+    position: relative;
+    top: 4px;
 }
 
 .ui-button > span {

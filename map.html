@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/select.css" />
     <link rel="stylesheet" href="./css/slider.css" />
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script type="text/javascript" src="js/jquery-1.6.1.min.js" ></script>
+    <script type="text/javascript" src="./js/jquery-1.6.1.min.js"></script>
     <script type="text/javascript" src="./js/jquery.mousewheel.js"></script>
     <script type="text/javascript" src="./js/jquery.ui-slider.js"></script>
     <script type="text/javascript" src="./js/jquery.jscrollpane.js"></script>
@@ -19,26 +18,77 @@
     <script type="text/javascript" src="./js/slider.js"></script>
 
     <script type="text/javascript">
-    	$(document).ready(function()
-    	{
-    		$('.scroll-pane').jScrollPane();
-    	});
+      function setRadio() {
+        $('.ui-radio input').removeProp('checked');
 
-      $(document).ready(function() //Включение слайдеров
-      {
+        $('#buy').prop('checked', true);
+        $('#type-all').prop('checked', true);
+        $('#rooms-1').prop('checked', true);
+        $('#houses-all').prop('checked', true);
+        $('#price-type-common').prop('checked', true);
+      };
+
+      function setCheckbox() {
+        $('.ui-checkbox input').removeProp('checked');
+
+        $('#floor-not-first').prop('checked', true);
+      };
+
+      function setSliders() {
+        $('#price-min').attr({value:'400', min: '0'});
+        $('#price-max').attr({value:'1000', max: '1000'});
+
+        $('#area-min').attr({value:'300', min: '0'});
+        $('#area-max').attr({value:'1000', max: '1000'});
+
+        $('#floor-min').attr({value:'1', min: '1'});
+        $('#floor-max').attr({value:'5', max: '5'});
+
+        $('#year-min').attr({value:'1990', min: '1900'});
+        $('#year-max').attr({value:'2018', max: '2018'});
+        refreshSliders();
+      };
+
+      function refreshSliders() {//Включение слайдеров
         sliderInit( $('#price-slider'), $('#price-min'), $('#price-max'),
-          $('#price-min').val(), $('#price-max').val()
+          $('#price-min').attr('min'), $('#price-max').attr('max')
         )
         sliderInit( $('#area-slider'), $('#area-min'), $('#area-max'),
-          $('#area-min').val(), $('#area-max').val()
+          $('#area-min').attr('min'), $('#area-max').attr('max')
         )
         sliderInit( $('#floor-slider'), $('#floor-min'), $('#floor-max'),
-          $('#floor-min').val(), $('#floor-max').val()
+          $('#floor-min').attr('min'), $('#floor-max').attr('max')
         )
         sliderInit( $('#year-slider'), $('#year-min'), $('#year-max'),
-          $('#year-min').val(), $('#year-max').val()
+          $('#year-min').attr('min'), $('#year-max').attr('max')
         )
-      });
+      };
+
+      function setFilter() {
+        setRadio();
+        setCheckbox();
+        setSliders();
+      }
+
+      $(document).ready(function()
+    	{
+        setRadio();
+        setCheckbox();
+        setSliders();
+
+        refreshSliders(); //Обновить слайдеры
+
+    		$('.scroll-pane').jScrollPane(); //Подключить скроллбар
+
+        var animationSpeed = 120;
+        $('.ui-button-filter').click(function () { //Скрытие фильтра по клику
+          $('.filter__block').fadeToggle(animationSpeed, 'linear');
+          $('.ui-button-apply').fadeToggle(animationSpeed, 'linear');
+          $('.ui-button-clear').fadeToggle(animationSpeed, 'linear');
+        });
+
+
+    	});
     </script>
 
   </head>
@@ -69,15 +119,15 @@
         <section class="filter">
 
           <button class="ui-button ui-button-filter">
-            <img src="./images/filter.png" alt="F" title="Отфильтровать" style="position: relative; top: 4px;">
+            <img src="./images/filter.png" alt="F" title="Фильтр">
           </button>
           <button class="ui-button ui-button-apply">
             <span>Применить</span>
           </button>
-          <button class="ui-button ui-button-clear clearfix">
+          <button class="ui-button ui-button-clear clearfix" onclick="setFilter(this)">
             <span>Очистить</span>
           </button>
-          <div class="block" style="padding: 12px 0">
+          <div class="filter__block block">
             <div class="filter__section">
               <form class="ui-radio">
               	<input id="buy" type="radio" name="gender" value="buy" checked>
@@ -110,7 +160,7 @@
                 <input id="rooms-3" type="radio" name="gender" value="rooms-3">
               	<label for="rooms-3">3к</label>
                 <input id="rooms-4+" type="radio" name="gender" value="rooms-3">
-              	<label for="rooms-4+">4к</label>
+              	<label for="rooms-4+">4к+</label>
               </form>
             </div>
             <div class="filter__section">
