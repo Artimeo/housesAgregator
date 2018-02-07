@@ -31,7 +31,7 @@
       function setCheckbox() {
         $('.ui-checkbox input').removeProp('checked');
 
-        $('#floor-not-first').prop('checked', true);
+        //$('#floor-not-first').prop('checked', true);
       };
 
       function setSliders() {
@@ -64,6 +64,35 @@
         )
       };
 
+      function refreshCheckbox() {
+        var val = 0;
+
+        val = $('#floor-min').attr('value');
+        if ($('#floor-not-first').prop('checked')) {
+          if (val <= 2){
+            $('#floor-min').attr({value:'2', min: '2'});
+          } else {
+            $('#floor-min').attr({value: val, min: '2'});
+          }
+        } else {
+          $('#floor-min').attr({value: val, min: '1'});
+        }
+
+        val = $('#floor-max').attr('value');
+        if ($('#floor-not-last').prop('checked')) {
+          if(val >= 4) {
+            $('#floor-max').attr({value:'4', max: '4'});
+          } else {
+            $('#floor-max').attr({value: val, max: '4'});
+          }
+        } else {
+          $('#floor-max').attr({value: val, max: '5'});
+        }
+        sliderInit( $('#floor-slider'), $('#floor-min'), $('#floor-max'),
+          $('#floor-min').attr('min'), $('#floor-max').attr('max')
+        )
+      }
+
       function setFilter() {
         setRadio();
         setCheckbox();
@@ -77,6 +106,8 @@
         setSliders();
 
         refreshSliders(); //Обновить слайдеры
+
+        refreshCheckbox();
 
     		$('.scroll-pane').jScrollPane(); //Подключить скроллбар
 
@@ -98,13 +129,13 @@
 
   <body>
     <header>
-      <a href="index.html" class="logo">
+      <a href="./index.html" class="logo">
         <img src="./images/logo.png" alt="logo.png" />
       </a>
       <nav class="tabs">
-        <a href="#">Главная</a>
-        <a href="#">Аналитика рынка</a>
-        <a href="#">Новости</a>
+        <a href="./map.html">Главная</a>
+        <a href="./index.html">Аналитика рынка</a>
+        <a href="./house-info.html">Новости</a>
       </nav>
 
       <a href="#" class="lk-show-menu">
@@ -203,9 +234,9 @@
               </form>
               <div class="ui-slider" id="floor-slider"></div>
               <form class="ui-checkbox">
-                <input id="floor-not-last" type="checkbox" value="floor-not-last" checked>
+                <input id="floor-not-last" type="checkbox" value="floor-not-last" onclick="refreshCheckbox(this)" checked>
                 <label for="floor-not-last">не последний</label>
-              	<input id="floor-not-first" type="checkbox" value="floor-not-first">
+              	<input id="floor-not-first" type="checkbox" value="floor-not-first" onclick="refreshCheckbox(this)">
               	<label for="floor-not-first">не первый</label>
               </form>
             </div>
