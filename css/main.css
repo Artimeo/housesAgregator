@@ -1,5 +1,5 @@
-@import "/css/fonts.css";
-@import "/css/scrollbar.css";
+@import "../css/fonts.css";
+@import "../css/scrollbar.css";
 
 
 body {
@@ -8,6 +8,11 @@ body {
     font-weight: 400;
     font-style: normal;
     background-color: #fdfdfd;
+    min-width: 1024px;
+}
+
+address {
+    font-style: normal;
 }
 
 input:focus,
@@ -30,7 +35,7 @@ h4 {
 }
 
 header {
-    padding: 5px 200px 5px 200px;
+    padding: 5px 10vw 5px 10vw;
     background-color: #333e4b;
     color: white;
     font-size: 14px;
@@ -70,13 +75,17 @@ header > .lk-show-menu > img {
     top: 3px;
 }
 
-main > section {
-    margin-left: 200px;
-    margin-right: 200px;
+.page-main {
+    margin: 0 10vw;
+    min-width: inherit;
+}
+
+.page-content {
+    padding-top: 35px;
 }
 
 .map {
-  background-image: url(/images/map-bg.png);
+  background-image: url('../images/map-bg.png');
   background-repeat: no-repeat;
   height: 900px;
   background-size: cover;
@@ -94,9 +103,9 @@ main > section {
     color: #818181;
 }
 
-main > .banners {
+.banners {
     margin: 20px 0 35px 0;
-    padding: 5px 200px 5px 200px;
+    padding: 5px 10vw 5px 10vw;
     min-width: 1024px;
     background-color: #ebebeb;
     font-size: 16px;
@@ -118,18 +127,14 @@ main > .banners {
 }
 
 footer {
-    margin: 120px 0 0 0;
-    padding: 5px 200px 5px 200px;
-    background-color: #333e4b;
-    color: white;
-    font-size: 12px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
+    margin-top: 120px;
     height: 100px;
-    box-shadow: 0px 1px 20px 1px #b7b7b7;
-    min-width: 1024px;
+    background-color: #333e4b;
+    font-size: 12px;
+    color: white;
+    /*box-shadow: 0px 1px 20px 1px #b7b7b7;*/
+    width: 100%;
+    min-width: calc(1024px + 20vw);
 }
 
 footer a,
@@ -138,22 +143,27 @@ footer a:visited {
     color: white;
 }
 
-.oferta {
-    padding: 5px 200px 5px 200px;
-    min-width: 1024px;
-    background-color: #0d131b;
-    color: #a6aaae;
-    font-size: 12px;
+footer .info {
+    padding: 0 10vw;
+    height: 70px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .oferta {
+    height: 30px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    height: 30px;
+    background-color: #0d131b;
 }
 
-.oferta > a,
-.oferta > a:hover,
-.oferta > a:visited {
+footer .oferta > a,
+footer .oferta > a:hover,
+footer .oferta > a:visited {
     color: #a6aaae;
     text-decoration: underline;
 }
@@ -308,7 +318,7 @@ footer a:visited {
 .sale__housepic {
     display: inline-flex;
     margin: 20px 0 0 20px;
-    background-image: url('/images/house.png');
+    background-image: url('../images/house.png');
     background-repeat: no-repeat;
     height: 100px;
     width: 180px;
@@ -402,7 +412,7 @@ footer a:visited {
 }
 
 .ui-checked {
-    background-image: url('/images/ui-bg.png');
+    background-image: url('../images/ui-bg.png');
 }
 
 .ui-radio, .ui-input-range {
@@ -434,7 +444,7 @@ footer a:visited {
 }
 
 .ui-radio input[type=radio]:checked + label {
-    background-image: url('/images/ui-bg.png');
+    background-image: url('../images/ui-bg.png');
 }
 
 
@@ -496,7 +506,7 @@ footer a:visited {
 
 .ui-checkbox input:checked + label::after {
     content: "";
-    background-image: url("/images/checkbox.png");
+    background-image: url('../images/checkbox.png');
     display: inline-block;
     width: 18px;
     height: 14px;

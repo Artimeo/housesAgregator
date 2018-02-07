@@ -8,12 +8,9 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/select.css" />
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script type="text/javascript" src="./js/jquery-1.6.1.min.js"></script>
     <script src="./js/select.js"></script>
   </head>
-
-
-
 
   <body>
     <header>
@@ -32,8 +29,8 @@
       <div class="lk-menu" style="display: none">         </div>
     </header>
 
-    <main>
-      <section class="big-marg-t">
+    <div class="page-main page-content">
+      <section>
         <nav class="breadcrumbs">
           <a href="index.html">Главная</a><span> / Аналитика рынка</span>
         </nav>
@@ -83,13 +80,15 @@
 
         <img src="./images/graph-analytics-1.png" alt="graph-analytics-1.png" style="margin-top: 40px"  />
       </section>
+    </div>
 
-
+    <div class="page-banners">
       <section class="banners">
         <span>Баннерные места</span>
       </section>
+    </div>
 
-
+    <div class="page-main">
       <section>
         <h4>Средняя стоимость квадратного метра</h4>
 
@@ -135,16 +134,17 @@
 
         <img src="./images/graph-analytics-1.png" alt="graph-analytics-1.png" style="margin-top: 40px"  />
       </section>
+    </div>
 
-
-      <footer>
-          <span>Агрегатор недвижимости, 2018</span>
-          <a href="http://rosoperator.ru/">МНПК Росоператор</a>
-      </footer>
-
+    <footer>
+      <address class="info">
+        <span>Агрегатор недвижимости, 2018</span>
+        <a href="http://rosoperator.ru/">МНПК Росоператор</a>
+      </address>
       <div class="oferta">
-          <a href="#">Оферта</a>
+        <a href="#">Оферта</a>
       </div>
-    </main>
+    </footer>
+
   </body>
 </html>
