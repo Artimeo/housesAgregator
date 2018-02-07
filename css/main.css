@@ -103,8 +103,11 @@ header > .lk-show-menu > img {
     color: #818181;
 }
 
-.banners {
+.page-banners {
     margin: 20px 0 35px 0;
+}
+
+.banners {
     padding: 5px 10vw 5px 10vw;
     min-width: 1024px;
     background-color: #ebebeb;

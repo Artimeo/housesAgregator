@@ -18,6 +18,7 @@
       $(document).ready(function()
       {
         $('.scroll-pane').jScrollPane();
+        $('.scroll-pane').style.removeAttr('width');
     	});
     </script>
 
@@ -43,7 +44,7 @@
       <div class="lk-menu" style="display: none">         </div>
     </header>
 
-    <main>
+    <div class="page-main page-content">
       <section class="big-marg-t">
         <nav class="breadcrumbs">
           <a href="index.html">Главная</a><span> / ул. Центральная, 1В</span>
@@ -56,52 +57,52 @@
           <div class="block block__house-info">
 						<div class="container">
 	          	<div class="block__house-pair scroll-pane"> <!--scroll-pane-->
-	            <ul>
-	              <li>
-	                <span class="h">Год: </span>2012
-	              </li>
-	              <li>
-	                <span class="h">Этажей: </span>5
-	              </li>
-	              <li>
-	                <span class="h">Застройщик: </span>Пензгорстройзаказчик
-	              </li>
-	              <li>
-	                <span class="h">Тип дома: </span>панельный
-	              </li>
-	              <li>
-	                <span class="h">Общая площадь дома: </span>100 000 м<sup>2</sup>
-	              </li>
-	              <li>
-	                <span class="h">Ближайшая остановка: </span>Аэропорт
-	              </li>
-	              <li>
-	                <span class="h">Тип дома: </span>панельный
-	              </li>
-	              <li>
-	                <span class="h">Общая площадь дома: </span>100 000 м<sup>2</sup>
-	              </li>
-	              <li>
-	                <span class="h">Ближайшая остановка: </span>Аэропорт
-	              </li>
-	            </ul>
-							<ul>
-	              <li>
-	                <span class="h">Подъездов: </span>3
-	              </li>
-	              <li>
-	                <span class="h">Лифт: </span>пассажирский и грузовой
-	              </li>
-	              <li>
-	                <span class="h">Разрешеное использование: </span>
-                    малоэтажная жилая застройка
-                    (индивидуальное жилищное строительство;
-                    размещение дачных домов и садовых домов)
-	              </li>
-	              <li>
-	                <span class="h">Управляющая компания: </span>ТСЖ "Ромашка"
-	              </li>
-	            </ul>
+  	            <ul>
+  	              <li>
+  	                <span class="h">Год: </span>2012
+  	              </li>
+  	              <li>
+  	                <span class="h">Этажей: </span>5
+  	              </li>
+  	              <li>
+  	                <span class="h">Застройщик: </span>Пензгорстройзаказчик
+  	              </li>
+  	              <li>
+  	                <span class="h">Тип дома: </span>панельный
+  	              </li>
+  	              <li>
+  	                <span class="h">Общая площадь дома: </span>100 000 м<sup>2</sup>
+  	              </li>
+  	              <li>
+  	                <span class="h">Ближайшая остановка: </span>Аэропорт
+  	              </li>
+  	              <li>
+  	                <span class="h">Тип дома: </span>панельный
+  	              </li>
+  	              <li>
+  	                <span class="h">Общая площадь дома: </span>100 000 м<sup>2</sup>
+  	              </li>
+  	              <li>
+  	                <span class="h">Ближайшая остановка: </span>Аэропорт
+  	              </li>
+  	            </ul>
+  							<ul>
+  	              <li>
+  	                <span class="h">Подъездов: </span>3
+  	              </li>
+  	              <li>
+  	                <span class="h">Лифт: </span>пассажирский и грузовой
+  	              </li>
+  	              <li>
+  	                <span class="h">Разрешеное использование: </span>
+                      малоэтажная жилая застройка
+                      (индивидуальное жилищное строительство;
+                      размещение дачных домов и садовых домов)
+  	              </li>
+  	              <li>
+  	                <span class="h">Управляющая компания: </span>ТСЖ "Ромашка"
+  	              </li>
+  	            </ul>
 							</div>
 						</div>
         	</div>
@@ -133,13 +134,16 @@
       </div>
 
       </section>
+    </div>
 
 
+    <div class="page-banners">
       <section class="banners">
         <span>Баннерные места</span>
       </section>
+    </div>
 
-
+    <div class="page-main">
       <section>
         <div class="row">
           <div class="container" style="width: 60%; margin-right: 3%">
@@ -249,16 +253,17 @@
           </div>
         </div>
       </section>
+    </div>
 
-
-      <footer>
-          <span>Агрегатор недвижимости, 2018</span>
-          <a href="http://rosoperator.ru/">МНПК Росоператор</a>
-      </footer>
-
+    <footer>
+      <address class="info">
+        <span>Агрегатор недвижимости, 2018</span>
+        <a href="http://rosoperator.ru/">МНПК Росоператор</a>
+      </address>
       <div class="oferta">
-          <a href="#">Оферта</a>
+        <a href="#">Оферта</a>
       </div>
-    </main>
+    </footer>
+
   </body>
 </html>
