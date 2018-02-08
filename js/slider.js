@@ -5,7 +5,7 @@ function sliderInit(slider_id, slider_min, slider_max, _min, _max)
     max: parseInt(_max),
     values: [slider_min.val(), slider_max.val()],
     range: true,
-    animate: true,
+    animate: 'fast',
     stop: function(event, ui) {
       slider_min.val(ui.values[0]);
       slider_max.val(ui.values[1]);

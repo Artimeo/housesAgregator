@@ -4,6 +4,7 @@
 html {
     min-width: 1024px;
     width: 100%;
+    height: 100%;
 }
 
 body {
@@ -51,12 +52,15 @@ header {
     width: inherit;
 }
 
-header > a,
-header > a:visited,
-header > .tabs > a,
-header > .tabs > a:visited {
+header a,
+header a:visited {
     color: white;
     text-decoration: none;
+}
+header .tabs a:hover,
+header .lk-show-menu span:hover {
+    color: #cdf501;
+    text-decoration: underline;
 }
 
 header > .logo {
@@ -79,6 +83,20 @@ header > .lk-show-menu > img {
     top: 3px;
 }
 
+.lk-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.lk-menu .block {
+    position: fixed;
+    width: 360px;
+    height: 330px;
+    top: calc(50% - 165px);
+    left: calc(50% - 180px);
+}
+
 .page-main {
     margin: 0 10vw;
     min-width: inherit;
@@ -89,16 +107,27 @@ header > .lk-show-menu > img {
 }
 
 .map {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  background-image: url('../images/map-bg.png');
-  background-repeat: no-repeat;
-  height: 900px;
-  background-size: cover;
-  padding: 20px 60px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    background-image: url('../images/map-bg.png');
+    background-repeat: no-repeat;
+    height: 900px;
+    background-size: cover;
+    padding: 20px 60px;
 }
 
+.map__filter {
+    width: 340px;
+    margin-right: 160px;
+}
+
+.map__ui-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    flex-direction: row;
+}
 .breadcrumbs {
     margin-top: 30px;
 }
@@ -352,10 +381,6 @@ footer .oferta > a:visited {
     margin-bottom: 5px;
 }
 
-.map__filter {
-    width: 340px;
-}
-
 .filter__block {
     padding: 12px 0;
 }
@@ -383,9 +408,7 @@ footer .oferta > a:visited {
 
 .ui-button,
 .ui-button:link,
-.ui-button:visited,
-.ui-button:hover,
-.ui-button:active {
+.ui-button:visited {
     font-family: firasans;
     background-color: #cdf501;
     padding: 5px 10px;
@@ -393,13 +416,18 @@ footer .oferta > a:visited {
     margin-right: 10px;
     border: none;
     box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.35);
-    min-height: 35px;
+    height: 35px;
     min-width: 35px;
     font-weight: 400;
     border-radius: 3px;
     cursor: pointer;
     vertical-align: top;
     white-space: nowrap;
+}
+
+.ui-button:hover,
+.ui-button:active {
+    background-color: #c6ec04;
 }
 
 .ui-button-filter img,
@@ -454,6 +482,9 @@ footer .oferta > a:visited {
 }
 .ui-radio label:last-child {
     border: none;
+}
+.ui-radio label:hover {
+    background-color: #c4ea001a;
 }
 
 .ui-radio input,

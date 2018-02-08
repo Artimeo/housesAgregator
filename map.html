@@ -110,6 +110,7 @@
 
       $(document).ready(function()
     	{
+        $('.lk-menu').hide();
         setRadio();
         setCheckbox();
         setSliders();
@@ -127,6 +128,10 @@
           $('.ui-button-clear').fadeToggle(animationSpeed, 'linear');
         });
 
+        $('.lk-show-menu').click(function () {
+          $('.lk-menu').fadeToggle(animationSpeed, 'linear');
+        });
+
 
     	});
     </script>
@@ -138,7 +143,7 @@
 
   <body>
     <header>
-      <a href="./index.html" class="logo">
+      <a href="./map.html" class="logo">
         <img src="./images/logo.png" alt="logo.png" />
       </a>
       <nav class="tabs">
@@ -146,15 +151,17 @@
         <a href="./index.html">Аналитика рынка</a>
         <a href="./house-info.html">Новости</a>
       </nav>
-
       <a href="#" class="lk-show-menu">
-        <img src="./images/user-icon.png" alt="user-icon.png" /> Вход / Регистрация
+        <img src="./images/user-icon.png" alt="user-icon.png" /> <span>Вход / Регистрация</span>
       </a>
-      <div class="lk-menu" style="display: none">         </div>
+      <div class="lk-menu" role="dialog">
+        <div class="block">
+          ddd
+        </div>
+      </div>
     </header>
 
     <main>
-
       <div class="map">
         <aside class="map__filter">
 
