@@ -1,6 +1,10 @@
 @import "../css/fonts.css";
 @import "../css/scrollbar.css";
 
+html {
+    min-width: 1024px;
+    width: 100%;
+}
 
 body {
     margin: 0;
@@ -8,7 +12,6 @@ body {
     font-weight: 400;
     font-style: normal;
     background-color: #fdfdfd;
-    min-width: 1024px;
 }
 
 address {
@@ -44,7 +47,8 @@ header {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 1px 20px 1px #b7b7b7;
-    min-width: 1024px;
+    min-width: inherit;
+    width: inherit;
 }
 
 header > a,
@@ -109,7 +113,6 @@ header > .lk-show-menu > img {
 }
 
 .banners {
-    padding: 5px 10vw 5px 10vw;
     min-width: 1024px;
     background-color: #ebebeb;
     font-size: 16px;
@@ -138,7 +141,6 @@ footer {
     color: white;
     /*box-shadow: 0px 1px 20px 1px #b7b7b7;*/
     width: 100%;
-    min-width: calc(1024px + 20vw);
 }
 
 footer a,
