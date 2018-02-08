@@ -85,12 +85,13 @@ header > .lk-show-menu > img {
 }
 
 .map {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
   background-image: url('../images/map-bg.png');
   background-repeat: no-repeat;
   height: 900px;
   background-size: cover;
-
-  z-index: -1;
   padding: 20px 60px;
 }
 
@@ -349,7 +350,7 @@ footer .oferta > a:visited {
     margin-bottom: 5px;
 }
 
-.filter {
+.map__filter {
     width: 340px;
 }
 
@@ -396,14 +397,16 @@ footer .oferta > a:visited {
     border-radius: 3px;
     cursor: pointer;
     vertical-align: top;
+    white-space: nowrap;
 }
 
-.ui-button-filter > img {
+.ui-button-filter img,
+.ui-button-search img {
     position: relative;
     top: 4px;
 }
 
-.ui-button > span {
+.ui-button span {
     position: relative;
     top: 2px;
 }
@@ -412,6 +415,16 @@ footer .oferta > a:visited {
     background-color: white;
     margin-right: 0!important;
     float: right;
+}
+
+.ui-button-draw {
+    position: relative;
+    text-align: right;
+}
+.ui-button-draw img {
+    position: relative;
+    top: 3px;
+    margin: 0 3px;
 }
 
 .ui-checked {
@@ -454,7 +467,7 @@ footer .oferta > a:visited {
 .ui-input-range {
     justify-content: space-between;
     border: none;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .ui-input-range input {
@@ -471,7 +484,7 @@ footer .oferta > a:visited {
 }
 
 .ui-slider {
-    margin: 10px 5px;
+    margin: 5px 5px;
     right: 2px;
 }
 

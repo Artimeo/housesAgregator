@@ -75,8 +75,12 @@
             $('#floor-min').attr({value: val, min: '2'});
           }
         } else {
-          $('#floor-min').attr({value: val, min: '1'});
-        }
+          if (val == 2){
+            $('#floor-min').attr({value: '1', min: '1'});
+          } else {
+            $('#floor-min').attr({value: val, min: '1'});
+          }
+        };
 
         val = $('#floor-max').attr('value');
         if ($('#floor-not-last').prop('checked')) {
@@ -86,11 +90,16 @@
             $('#floor-max').attr({value: val, max: '4'});
           }
         } else {
-          $('#floor-max').attr({value: val, max: '5'});
-        }
+          if (val == 4) {
+            $('#floor-max').attr({value: '5', max: '5'});
+          } else {
+            $('#floor-max').attr({value: val, max: '5'});
+          }
+        };
+
         sliderInit( $('#floor-slider'), $('#floor-min'), $('#floor-max'),
           $('#floor-min').attr('min'), $('#floor-max').attr('max')
-        )
+        );
       }
 
       function setFilter() {
@@ -147,7 +156,7 @@
     <main>
 
       <div class="map">
-        <section class="filter">
+        <aside class="map__filter">
 
           <button class="ui-button ui-button-filter">
             <img src="./images/filter.png" alt="F" title="Фильтр">
@@ -261,12 +270,58 @@
               </form>
             </div>
           </div>
-        </section>
+        </aside>
+
+        <div class="map__ui-container">
+          <button class="ui-button ui-button-draw">
+            <img src="./images/draw.png" alt="pen">
+            <span>Нарисовать область</span>
+          </button>
+          <div class="select_mate" data-mate-select="active" >
+            <select name="" onchange="" onclick="return false;" id="ui-select-layers" style="display: none">
+              <option value="">Слои</option>
+              <option value="1">Слой 1</option>
+              <option value="2">Слой 2</option>
+              <option value="3">Слой 3</option>
+            </select>
+            <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
+            <span onclick="open_select(this)" class="icon_select_mate" >
+              <svg fill="#acacac" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                <path d="M0-.75h24v24H0z" fill="none"/>
+              </svg>
+            </span>
+            <div class="cont_list_select_mate">
+              <ul class="cont_select_int">  </ul>
+            </div>
+          </div>
+          <div class="select_mate marg-r" data-mate-select="active" >
+            <select name="" onchange="" onclick="return false;" id="ui-select-region" style="display: none">
+              <option value="">Район</option>
+              <option value="1">Арбеково</option>
+              <option value="2">Спутник</option>
+              <option value="3">Центр</option>
+            </select>
+            <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
+            <span onclick="open_select(this)" class="icon_select_mate" >
+              <svg fill="#acacac" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                <path d="M0-.75h24v24H0z" fill="none"/>
+              </svg>
+            </span>
+            <div class="cont_list_select_mate">
+              <ul class="cont_select_int">  </ul>
+            </div>
+          </div>
+          <button class="ui-button ui-button-search">
+            <img src="./images/search.png" alt="F" title="Фильтр">
+          </button>
+        </div>
       </div>
+
       <section class="banners">
         <span>Баннерные места</span>
       </section>
-
     </main>
 
     <footer>
