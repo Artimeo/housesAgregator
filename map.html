@@ -110,7 +110,6 @@
 
       $(document).ready(function()
     	{
-        $('.lk-menu').hide();
         setRadio();
         setCheckbox();
         setSliders();
@@ -129,7 +128,16 @@
         });
 
         $('.lk-show-menu').click(function () {
-          $('.lk-menu').fadeToggle(animationSpeed, 'linear');
+          $('.lk-menu').css({display: 'block'});
+          $('.lk-menu').animate({opacity: '1'}, animationSpeed);
+        });
+
+        $('.lk-menu').click(function () {
+          $('.lk-menu').animate({opacity: '0'}, animationSpeed, function() {
+            $('.lk-menu').css({display: 'none'});
+          }
+        );
+          //$('.lk-menu').css({display: 'none'});
         });
 
 
@@ -154,9 +162,10 @@
       <a href="#" class="lk-show-menu">
         <img src="./images/user-icon.png" alt="user-icon.png" /> <span>Вход / Регистрация</span>
       </a>
-      <div class="lk-menu" role="dialog">
+      <div class="lk-menu" role="dialog" style="display: none; opacity: 0">
+        <div class="lk-mask"></div>
         <div class="block">
-          ddd
+          
         </div>
       </div>
     </header>

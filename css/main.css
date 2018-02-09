@@ -95,6 +95,17 @@ header > .lk-show-menu > img {
     height: 330px;
     top: calc(50% - 165px);
     left: calc(50% - 180px);
+    color: black;
+    z-index: 10;
+}
+
+.lk-mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.4;
+    z-index: 9;
 }
 
 .page-main {
