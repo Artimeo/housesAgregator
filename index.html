@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/select.css" />
     <script type="text/javascript" src="./js/jquery-1.6.1.min.js"></script>
     <script src="./js/select.js"></script>
+    <script type="text/javascript" src="./js/lk.js"></script>
   </head>
 
   <body>
@@ -25,7 +26,12 @@
       <a href="#" class="lk-show-menu">
         <img src="./images/user-icon.png" alt="user-icon.png" /> <span>Вход / Регистрация</span>
       </a>
-      <div class="lk-menu" style="display: none"></div>
+      <div class="lk-menu" role="dialog" style="display: none; opacity: 0">
+        <div class="lk-mask"></div>
+        <div class="block">
+
+        </div>
+      </div>
     </header>
 
     <div class="page-main page-content">

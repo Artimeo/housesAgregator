@@ -3,3 +3,4 @@
 .jspDrag{background: #b6bdc5;position: relative;top: 0;left: 0;cursor: pointer;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
 .jspDrag:hover, .jspDrag:active{background: #9ea5ad;position: relative;top: 0;left: 0;cursor: pointer;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
 .jspCorner{	background: #eeeef4; float: left; height: 100%;}
+.jspHorizontalBar{ display: none;}

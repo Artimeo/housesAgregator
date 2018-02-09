@@ -16,6 +16,7 @@
     <script type="text/javascript" src="./js/jquery.jscrollpane.js"></script>
     <script type="text/javascript" src="./js/select.js"></script>
     <script type="text/javascript" src="./js/slider.js"></script>
+    <script type="text/javascript" src="./js/lk.js"></script>
 
     <script type="text/javascript">
       function setRadio() {
@@ -120,27 +121,12 @@
 
     		$('.scroll-pane').jScrollPane(); //Подключить скроллбар
 
-        var animationSpeed = 120;
+        var animationSpeed = 200;
         $('.ui-button-filter').click(function () { //Скрытие фильтра по клику
           $('.filter__block').fadeToggle(animationSpeed, 'linear');
           $('.ui-button-apply').fadeToggle(animationSpeed, 'linear');
           $('.ui-button-clear').fadeToggle(animationSpeed, 'linear');
         });
-
-        $('.lk-show-menu').click(function () {
-          $('.lk-menu').css({display: 'block'});
-          $('.lk-menu').animate({opacity: '1'}, animationSpeed);
-        });
-
-        $('.lk-menu').click(function () {
-          $('.lk-menu').animate({opacity: '0'}, animationSpeed, function() {
-            $('.lk-menu').css({display: 'none'});
-          }
-        );
-          //$('.lk-menu').css({display: 'none'});
-        });
-
-
     	});
     </script>
 
@@ -165,7 +151,16 @@
       <div class="lk-menu" role="dialog" style="display: none; opacity: 0">
         <div class="lk-mask"></div>
         <div class="block">
-          
+          <h3 class="lk-h">
+            Вход
+          </h3>
+          <a href="#" class="lk-h">
+            Регистрация
+          </a>
+          <form class="" action="index.html" method="post">
+            <input type="text" name="" value="" placeholder="Email" class="lk-username" id="username">
+            <input type="password" name="" value="" placeholder="Пароль" class="lk-password" id="password">
+          </form>
         </div>
       </div>
     </header>
@@ -173,7 +168,6 @@
     <main>
       <div class="map">
         <aside class="map__filter">
-
           <button class="ui-button ui-button-filter">
             <img src="./images/filter.png" alt="F" title="Фильтр">
           </button>
@@ -259,10 +253,10 @@
               </form>
               <div class="ui-slider" id="floor-slider"></div>
               <form class="ui-checkbox">
+                <input id="floor-not-first" type="checkbox" value="floor-not-first" onclick="refreshCheckbox(this)">
+                <label for="floor-not-first">не первый</label>
                 <input id="floor-not-last" type="checkbox" value="floor-not-last" onclick="refreshCheckbox(this)" checked>
                 <label for="floor-not-last">не последний</label>
-              	<input id="floor-not-first" type="checkbox" value="floor-not-first" onclick="refreshCheckbox(this)">
-              	<label for="floor-not-first">не первый</label>
               </form>
             </div>
             <div class="filter__section">

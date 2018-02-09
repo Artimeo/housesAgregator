@@ -57,28 +57,28 @@ header a:visited {
     color: white;
     text-decoration: none;
 }
+
 header .tabs a:hover,
 header .lk-show-menu span:hover {
     color: #cdf501;
-    text-decoration: underline;
 }
 
-header > .logo {
+header .logo {
     margin-right: 150px;
 }
 
-header > .tabs {
+header .tabs {
     width: 350px;
     display: flex;
     justify-content: space-between;
 }
 
-header > .lk-show-menu {
+header .lk-show-menu {
     margin-left: auto;
     white-space: pre;
 }
 
-header > .lk-show-menu > img {
+header .lk-show-menu img {
     position: relative;
     top: 3px;
 }
@@ -87,16 +87,18 @@ header > .lk-show-menu > img {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 5;
 }
 
 .lk-menu .block {
     position: fixed;
+    padding: 30px;
     width: 360px;
     height: 330px;
     top: calc(50% - 165px);
     left: calc(50% - 180px);
     color: black;
-    z-index: 10;
+    z-index: 1;
 }
 
 .lk-mask {
@@ -105,7 +107,32 @@ header > .lk-show-menu > img {
     height: 100%;
     background-color: black;
     opacity: 0.4;
-    z-index: 9;
+    z-index: 0;
+}
+
+.lk-h {
+    font-weight: 800;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-right: 30px;
+    display: inline-block;
+}
+
+header a.lk-h {
+    color: #b3d81b;
+    text-decoration: underline;
+}
+
+.lk-username,
+.lk-password {
+    display: block;
+    font-size: 16px;
+    width: 100%;
+    height: 35px;
+    margin-bottom: 10px;
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+    color: #cccccc;
 }
 
 .page-main {
@@ -168,11 +195,6 @@ header > .lk-show-menu > img {
     flex-wrap: nowrap;
 }
 
-.container {
-    margin: 0;
-    padding: 0;
-}
-
 footer {
     margin-top: 120px;
     height: 100px;
@@ -198,6 +220,10 @@ footer .info {
     align-items: center;
 }
 
+footer .info a:hover {
+    color: #d7d7d7;
+}
+
 footer .oferta {
     height: 30px;
     display: flex;
@@ -207,11 +233,13 @@ footer .oferta {
     background-color: #0d131b;
 }
 
-footer .oferta > a,
-footer .oferta > a:hover,
-footer .oferta > a:visited {
+footer .oferta a,
+footer .oferta a:visited {
     color: #a6aaae;
     text-decoration: underline;
+}
+footer .oferta a:hover {
+    color: #d7d7d7;
 }
 
 .block {
@@ -266,7 +294,6 @@ footer .oferta > a:visited {
 
 .block__house-pair ul {
     display: inline-block;
-    margin-right: 100px;
     min-width: 30%;
     max-width: 40%;
     vertical-align: top;
@@ -495,7 +522,7 @@ footer .oferta > a:visited {
     border: none;
 }
 .ui-radio label:hover {
-    background-color: #c4ea001a;
+    background-color: rgba(196, 234, 0, 0.2);
 }
 
 .ui-radio input,
@@ -519,7 +546,7 @@ footer .oferta > a:visited {
     border: 1px solid #d7d7d7;
     border-radius: 3px;
     width: 25%;
-    color: #cccccc;
+    color: #969696;
     padding: 0 10px;
 }
 .ui-input-range input::selection {

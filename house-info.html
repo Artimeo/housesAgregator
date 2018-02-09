@@ -13,12 +13,13 @@
     <script src="./js/jquery.mousewheel.js"></script>
     <script src="./js/jquery.jscrollpane.js"></script>
     <script src="./js/select.js"></script>
+    <script type="text/javascript" src="./js/lk.js"></script>
 
     <script type="text/javascript">
       $(document).ready(function()
       {
         $('.scroll-pane').jScrollPane();
-        $('.scroll-pane').style.removeAttr('width');
+        $('.scroll-pane').css({width: 'auto'});
     	});
     </script>
 
@@ -41,11 +42,16 @@
       <a href="#" class="lk-show-menu">
         <img src="./images/user-icon.png" alt="user-icon.png" /> <span>Вход / Регистрация</span>
       </a>
-      <div class="lk-menu" style="display: none">         </div>
+      <div class="lk-menu" role="dialog" style="display: none; opacity: 0">
+        <div class="lk-mask"></div>
+        <div class="block">
+
+        </div>
+      </div>
     </header>
 
     <div class="page-main page-content">
-      <section class="big-marg-t">
+      <section>
         <nav class="breadcrumbs">
           <a href="index.html">Главная</a><span> / ул. Центральная, 1В</span>
         </nav>
@@ -55,55 +61,53 @@
         <div class="row marg-t">
           <img class="house-pic" src="./images/house.png" alt="house.png" />
           <div class="block block__house-info">
-						<div class="container">
-	          	<div class="block__house-pair scroll-pane"> <!--scroll-pane-->
-  	            <ul>
-  	              <li>
-  	                <span class="h">Год: </span>2012
-  	              </li>
-  	              <li>
-  	                <span class="h">Этажей: </span>5
-  	              </li>
-  	              <li>
-  	                <span class="h">Застройщик: </span>Пензгорстройзаказчик
-  	              </li>
-  	              <li>
-  	                <span class="h">Тип дома: </span>панельный
-  	              </li>
-  	              <li>
-  	                <span class="h">Общая площадь дома: </span>100 000 м<sup>2</sup>
-  	              </li>
-  	              <li>
-  	                <span class="h">Ближайшая остановка: </span>Аэропорт
-  	              </li>
-  	              <li>
-  	                <span class="h">Тип дома: </span>панельный
-  	              </li>
-  	              <li>
-  	                <span class="h">Общая площадь дома: </span>100 000 м<sup>2</sup>
-  	              </li>
-  	              <li>
-  	                <span class="h">Ближайшая остановка: </span>Аэропорт
-  	              </li>
-  	            </ul>
-  							<ul>
-  	              <li>
-  	                <span class="h">Подъездов: </span>3
-  	              </li>
-  	              <li>
-  	                <span class="h">Лифт: </span>пассажирский и грузовой
-  	              </li>
-  	              <li>
-  	                <span class="h">Разрешеное использование: </span>
-                      малоэтажная жилая застройка
-                      (индивидуальное жилищное строительство;
-                      размещение дачных домов и садовых домов)
-  	              </li>
-  	              <li>
-  	                <span class="h">Управляющая компания: </span>ТСЖ "Ромашка"
-  	              </li>
-  	            </ul>
-							</div>
+          	<div class="block__house-pair scroll-pane"> <!--scroll-pane-->
+	            <ul>
+	              <li>
+	                <span class="h">Год: </span>2012
+	              </li>
+	              <li>
+	                <span class="h">Этажей: </span>5
+	              </li>
+	              <li>
+	                <span class="h">Застройщик: </span>Пензгорстройзаказчик
+	              </li>
+	              <li>
+	                <span class="h">Тип дома: </span>панельный
+	              </li>
+	              <li>
+	                <span class="h">Общая площадь дома: </span>100 000 м<sup>2</sup>
+	              </li>
+	              <li>
+	                <span class="h">Ближайшая остановка: </span>Аэропорт
+	              </li>
+	              <li>
+	                <span class="h">Тип дома: </span>панельный
+	              </li>
+	              <li>
+	                <span class="h">Общая площадь дома: </span>100 000 м<sup>2</sup>
+	              </li>
+	              <li>
+	                <span class="h">Ближайшая остановка: </span>Аэропорт
+	              </li>
+	            </ul>
+							<ul>
+	              <li>
+	                <span class="h">Подъездов: </span>3
+	              </li>
+	              <li>
+	                <span class="h">Лифт: </span>пассажирский и грузовой
+	              </li>
+	              <li>
+	                <span class="h">Разрешеное использование: </span>
+                    малоэтажная жилая застройка
+                    (индивидуальное жилищное строительство;
+                    размещение дачных домов и садовых домов)
+	              </li>
+	              <li>
+	                <span class="h">Управляющая компания: </span>ТСЖ "Ромашка"
+	              </li>
+	            </ul>
 						</div>
         	</div>
 
