@@ -418,13 +418,38 @@ footer .oferta a:hover {
     margin: 0 0 5px 0;
 }
 
-.sale__view,
-.sale__view:hover,
-.sale__view:visited {
+.sale__options-view,
+.sale__options-fav,
+.sale__options-ban {
     font-weight: 400;
+    white-space: nowrap;
     color: #5b86e7;
     text-decoration: underline;
+    margin-right: 25px;
 }
+
+.sale__options-fav,
+.sale__options-ban {text-decoration: none; color: #818181;}
+
+.sale__options-ban::before,
+.sale__options-fav::before {
+    content: ' ';
+    background-image: url('../images/star.png');
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    right: 3px;
+}
+.sale__options-ban::before {background-image: url('../images/flag.png');}
+
+.sale__options-fav:hover {color: #5b86e7;}
+.sale__options-ban:hover {color: red;}
+
+.sale__options-fav:hover::before {background-image: url('../images/star_hover.png'); opacity: 0.8}
+.sale__options-ban:hover::before {background-image: url('../images/flag_hover.png'); opacity: 0.7}
 
 .sale__date, .news__date {
     color: #818181;
