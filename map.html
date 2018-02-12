@@ -31,8 +31,6 @@
 
       function setCheckbox() {
         $('.ui-checkbox input').removeProp('checked');
-
-        //$('#floor-not-first').prop('checked', true);
       };
 
       function setSliders() {
@@ -157,10 +155,20 @@
           <a href="#" class="lk-h">
             Регистрация
           </a>
-          <form class="" action="index.html" method="post">
-            <input type="text" name="" value="" placeholder="Email" class="lk-username" id="username">
-            <input type="password" name="" value="" placeholder="Пароль" class="lk-password" id="password">
+          <form class="lk-form" action="index.html" method="post">
+            <div class="lk-form__container">
+              <input type="text" name="" value="" placeholder="Email" class="lk-username" id="username">
+              <span class="lk-username-icon"></span>
+            </div>
+            <div class="lk-form__container">
+              <input type="password" name="" value="" placeholder="Пароль" class="lk-password" id="password">
+              <span class="lk-password-icon"></span>
+            </div>
           </form>
+          <button class="ui-button ui-button-login">
+            <span>Войти</span>
+          </button>
+          <a href="#" class="lk-forget">Забыли пароль?</a>
         </div>
       </div>
     </header>

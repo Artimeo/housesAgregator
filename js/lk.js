@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-  var lk_animationSpeed = 375;
+  var lk_animationSpeed = 300;
   $('.lk-show-menu').click(function () {
     $('.lk-menu').css({display: 'block'});
     $('.lk-menu').animate({opacity: '1'}, lk_animationSpeed);
