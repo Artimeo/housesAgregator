@@ -339,7 +339,8 @@ footer .oferta a:hover {
     justify-content: flex-start;
     align-content: flex-start;
     height: 160px;
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .block__house-pair ul {
