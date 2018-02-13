@@ -128,11 +128,15 @@ header a.lk-h:hover {
 
 header a.lk-forget {
     font-weight: 400;
-    color: #818181;
+    color: #bbbbbb;
     text-decoration: underline;
     text-align: center;
     display: block;
     margin: 0 auto;
+}
+
+header a.lk-forget:hover {
+    color: #9e9e9e;
 }
 
 .lk-form {
@@ -210,12 +214,76 @@ header a.lk-forget {
     margin-right: 160px;
 }
 
+.map__ui {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .map__ui-container {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
     flex-direction: row;
 }
+
+.map__news.block {
+    padding: 10px;
+    max-height: 550px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.map__news .house-pic {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.map__news ul li{
+    margin: 0;
+    line-height: 1.8;
+}
+
+.map__banner {
+    height: 80px;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+.map__news-ad {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.map__news-ad-left {overflow: hidden; text-overflow: ellipsis; color: #5b86e7;}
+.map__news-ad-left a {color: #5b86e7;}
+.map__news-ad-right {margin-left: 5px;}
+
+.map__news-ad-cost {
+    margin: 0;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.map__news-ad-cost::after {
+  content: ' ';
+  background-image: url('../images/rub.png');
+  background-repeat: no-repeat;
+  height: 18px;
+  width: 14px;
+  display: inline-block;
+  position: relative;
+  top: 4px;
+  right: -3px;
+}
+
 .breadcrumbs {
     margin-top: 30px;
 }
@@ -318,6 +386,18 @@ footer .oferta a:hover {
 .block ul span {
     color: #818181;
     font-weight: normal;
+}
+
+.close::before{
+    content: ' ';
+    background-image: url('../images/close.png');
+    background-repeat: no-repeat;
+    min-height: 10px;
+    min-width: 11px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+    align-self: flex-end;
 }
 
 .house-pic {
@@ -551,6 +631,10 @@ footer .oferta a:hover {
     top: 4px;
 }
 
+.ui-button-search {
+    margin-right: 0;
+}
+
 .ui-button span {
     position: relative;
     top: 2px;
@@ -577,6 +661,14 @@ footer .oferta a:hover {
     font-size: 16px;
     margin: 30px auto 15px;
     width: 200px;
+}
+
+.ui-button-more {
+    display: block;
+    font-size: 16px;
+    margin: 10px auto 10px;
+    width: 200px;
+    min-height: 35px
 }
 
 .ui-checked {

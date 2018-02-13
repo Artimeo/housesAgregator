@@ -148,7 +148,7 @@
       </a>
       <div class="lk-menu" role="dialog" style="display: none; opacity: 0">
         <div class="lk-mask"></div>
-        <div class="block">
+        <div class="block close">
           <h3 class="lk-h">
             Вход
           </h3>
@@ -290,51 +290,99 @@
           </div>
         </aside>
 
-        <div class="map__ui-container">
-          <button class="ui-button ui-button-draw">
-            <img src="./images/draw.png" alt="pen">
-            <span>Нарисовать область</span>
-          </button>
-          <div class="select_mate" data-mate-select="active" >
-            <select name="" onchange="" onclick="return false;" id="ui-select-layers" style="display: none">
-              <option value="">Слои</option>
-              <option value="1">Слой 1</option>
-              <option value="2">Слой 2</option>
-              <option value="3">Слой 3</option>
-            </select>
-            <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
-            <span onclick="open_select(this)" class="icon_select_mate" >
-              <svg fill="#acacac" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                <path d="M0-.75h24v24H0z" fill="none"/>
-              </svg>
-            </span>
-            <div class="cont_list_select_mate">
-              <ul class="cont_select_int">  </ul>
+        <aside class="map__ui">
+          <div class="map__ui-container">
+            <button class="ui-button ui-button-draw">
+              <img src="./images/draw.png" alt="pen">
+              <span>Нарисовать область</span>
+            </button>
+            <div class="select_mate" data-mate-select="active" >
+              <select name="" onchange="" onclick="return false;" id="ui-select-layers" style="display: none">
+                <option value="">Слои</option>
+                <option value="1">Слой 1</option>
+                <option value="2">Слой 2</option>
+                <option value="3">Слой 3</option>
+              </select>
+              <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
+              <span onclick="open_select(this)" class="icon_select_mate" >
+                <svg fill="#acacac" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                  <path d="M0-.75h24v24H0z" fill="none"/>
+                </svg>
+              </span>
+              <div class="cont_list_select_mate">
+                <ul class="cont_select_int">  </ul>
+              </div>
             </div>
-          </div>
-          <div class="select_mate marg-r" data-mate-select="active" >
-            <select name="" onchange="" onclick="return false;" id="ui-select-region" style="display: none">
-              <option value="">Район</option>
-              <option value="1">Арбеково</option>
-              <option value="2">Спутник</option>
-              <option value="3">Центр</option>
-            </select>
-            <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
-            <span onclick="open_select(this)" class="icon_select_mate" >
-              <svg fill="#acacac" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                <path d="M0-.75h24v24H0z" fill="none"/>
-              </svg>
-            </span>
-            <div class="cont_list_select_mate">
-              <ul class="cont_select_int">  </ul>
+            <div class="select_mate marg-r" data-mate-select="active" >
+              <select name="" onchange="" onclick="return false;" id="ui-select-region" style="display: none">
+                <option value="">Район</option>
+                <option value="1">Арбеково</option>
+                <option value="2">Спутник</option>
+                <option value="3">Центр</option>
+              </select>
+              <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
+              <span onclick="open_select(this)" class="icon_select_mate" >
+                <svg fill="#acacac" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                  <path d="M0-.75h24v24H0z" fill="none"/>
+                </svg>
+              </span>
+              <div class="cont_list_select_mate">
+                <ul class="cont_select_int">  </ul>
+              </div>
             </div>
+            <button class="ui-button ui-button-search">
+              <img src="./images/search.png" alt="F" title="Фильтр">
+            </button>
           </div>
-          <button class="ui-button ui-button-search">
-            <img src="./images/search.png" alt="F" title="Фильтр">
-          </button>
-        </div>
+
+          <div class="map__news block close">
+            <span>ул. Центральная, 1В</span>
+            <img class="house-pic" src="./images/house.png" alt="house.png" />
+            <ul>
+              <li>
+                <span class="h">Год: </span>2012
+              </li>
+              <li>
+                <span class="h">Этажей: </span>5
+              </li>
+              <li>
+                <span class="h">Застройщик: </span>Пензгорстройзаказчик
+              </li>
+              <li>
+                <span class="h">Тип дома: </span>панельный
+              </li>
+              <li>
+                <span class="h">Общая площадь дома: </span>100 000 м<sup>2</sup>
+              </li>
+            </ul>
+            <div class="map__banner">
+              <span>Баннер</span>
+            </div>
+            <span class="map__news-count">Объявлений: 10</span>
+            <div class="map__news-ad">
+              <p class="map__news-ad-left">
+                <a href="http://bazarpnz.ru/ann/33211388/">http://bazarpnz.ru/ann/33211388/</a>
+              </p>
+              <div class="map__news-ad-right">
+                <p class="map__news-ad-cost">1 400 000</p>
+              </div>
+            </div>
+            <div class="map__news-ad">
+              <p class="map__news-ad-left">
+                <a href="http://bazarpnz.ru/ann/33211388/">http://bazarpnz.ru/ann/33211388/</a>
+              </p>
+              <div class="map__news-ad-right">
+                <p class="map__news-ad-cost">2 650 000</p>
+              </div>
+            </div>
+            <button class="ui-button ui-button-more">
+              <span>Узнать больше</span>
+            </button>
+          </div>
+        </aside>
+
       </div>
 
       <section class="banners">
