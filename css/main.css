@@ -227,27 +227,28 @@ header a.lk-forget:hover {
     flex-direction: row;
 }
 
-.map__news.block {
+.map__sale.block {
     padding: 10px;
-    max-height: 550px;
+    max-height: 515px;
     max-width: 300px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
 }
 
-.map__news .house-pic {
+.map__sale .house-pic {
     width: 100%;
     height: auto;
     display: block;
     margin-bottom: 10px;
 }
 
-.map__news ul li{
+.map__sale ul li{
     margin: 0;
     line-height: 1.8;
 }
 
-.map__banner {
+.map__sale-banner {
     height: 80px;
     background-color: #ebebeb;
     display: flex;
@@ -257,31 +258,44 @@ header a.lk-forget:hover {
     margin-bottom: 10px
 }
 
-.map__news-ad {
+.map__sale-ad {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
 }
-.map__news-ad-left {overflow: hidden; text-overflow: ellipsis; color: #5b86e7;}
-.map__news-ad-left a {color: #5b86e7;}
-.map__news-ad-right {margin-left: 5px;}
+.map__sale-ad-left {overflow: hidden; text-overflow: ellipsis; color: #5b86e7;}
+.map__sale-ad-left a {color: #5b86e7;}
+.map__sale-ad-right {margin-left: 5px;}
 
-.map__news-ad-cost {
+.map__sale-ad-cost {
     margin: 0;
     font-size: 20px;
     white-space: nowrap;
 }
 
-.map__news-ad-cost::after {
-  content: ' ';
-  background-image: url('../images/rub.png');
-  background-repeat: no-repeat;
-  height: 18px;
-  width: 14px;
-  display: inline-block;
-  position: relative;
-  top: 4px;
-  right: -3px;
+.map__sale-ad-cost::after {
+    content: ' ';
+    background-image: url('../images/rub.png');
+    background-repeat: no-repeat;
+    height: 18px;
+    width: 14px;
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    right: -3px;
+}
+
+.map__news.block {
+    width: 300px;
+    padding: 10px;
+}
+
+.map__news-h {
+    margin: 0 0 5px;
+}
+
+.map__news .news {
+    padding: 5px 0;
 }
 
 .breadcrumbs {
@@ -388,10 +402,11 @@ footer .oferta a:hover {
     font-weight: normal;
 }
 
-.close::before{
-    content: ' ';
+.ui-close{
     background-image: url('../images/close.png');
     background-repeat: no-repeat;
+    height: 10px;
+    width: 11px;
     min-height: 10px;
     min-width: 11px;
     position: relative;
@@ -633,6 +648,34 @@ footer .oferta a:hover {
 
 .ui-button-search {
     margin-right: 0;
+}
+
+.ui-search {
+    background-color: white;
+    height: 35px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 16px -2px rgba(0, 0, 0, 0.40);
+    z-index: 0;
+}
+
+.ui-search input{
+    padding: 8px 0 5px 10px;
+    box-sizing: border-box;
+    border: 0;
+    font: 400 14px 'firasans';
+    color: #777;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+.ui-search button {
+    box-shadow: none;
+}
+
+.ui-search .ui-close {
+    top: 13px;
+    right: 10px;
+    margin-left: 6px;
 }
 
 .ui-button span {

@@ -14,7 +14,7 @@
     position: relative;
     display: inline-block;
     margin-right: 10px;
-    min-width: 210px;
+    width: 210px;
     height: 35px;
     color: #777;
     font-weight: 300;

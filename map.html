@@ -16,12 +16,11 @@
     <script type="text/javascript" src="./js/jquery.jscrollpane.js"></script>
     <script type="text/javascript" src="./js/select.js"></script>
     <script type="text/javascript" src="./js/slider.js"></script>
-    <script type="text/javascript" src="./js/lk.js"></script>
+    <script type="text/javascript" src="./js/showHide.js"></script>
 
     <script type="text/javascript">
       function setRadio() {
         $('.ui-radio input').removeProp('checked');
-
         $('#buy').prop('checked', true);
         $('#type-all').prop('checked', true);
         $('#rooms-1').prop('checked', true);
@@ -50,17 +49,13 @@
 
       function refreshSliders() {//Включение слайдеров
         sliderInit( $('#price-slider'), $('#price-min'), $('#price-max'),
-          $('#price-min').attr('min'), $('#price-max').attr('max')
-        )
+          $('#price-min').attr('min'), $('#price-max').attr('max'));
         sliderInit( $('#area-slider'), $('#area-min'), $('#area-max'),
-          $('#area-min').attr('min'), $('#area-max').attr('max')
-        )
+          $('#area-min').attr('min'), $('#area-max').attr('max'));
         sliderInit( $('#floor-slider'), $('#floor-min'), $('#floor-max'),
-          $('#floor-min').attr('min'), $('#floor-max').attr('max')
-        )
+          $('#floor-min').attr('min'), $('#floor-max').attr('max'));
         sliderInit( $('#year-slider'), $('#year-min'), $('#year-max'),
-          $('#year-min').attr('min'), $('#year-max').attr('max')
-        )
+          $('#year-min').attr('min'), $('#year-max').attr('max'));
       };
 
       function refreshCheckbox() {
@@ -97,8 +92,7 @@
         };
 
         sliderInit( $('#floor-slider'), $('#floor-min'), $('#floor-max'),
-          $('#floor-min').attr('min'), $('#floor-max').attr('max')
-        );
+          $('#floor-min').attr('min'), $('#floor-max').attr('max'));
       }
 
       function setFilter() {
@@ -117,7 +111,10 @@
 
         refreshCheckbox();
 
-    		$('.scroll-pane').jScrollPane(); //Подключить скроллбар
+        if( $('.map__news .news').size() > 2) { //Подключить скроллбар
+          $('.map__news .container').addClass('scroll-pane');
+    		  $('.scroll-pane').jScrollPane({autoReinitialise: true, autoReinitialiseDelay: 1000, contentWidth: 280});
+        }
 
         var animationSpeed = 200;
         $('.ui-button-filter').click(function () { //Скрытие фильтра по клику
@@ -148,7 +145,8 @@
       </a>
       <div class="lk-menu" role="dialog" style="display: none; opacity: 0">
         <div class="lk-mask"></div>
-        <div class="block close">
+        <div class="block">
+          <span class="ui-close" id="lk-menu"></span>
           <h3 class="lk-h">
             Вход
           </h3>
@@ -332,12 +330,21 @@
                 <ul class="cont_select_int">  </ul>
               </div>
             </div>
-            <button class="ui-button ui-button-search">
+            <div class="ui-search" method="post">
+              <input type="text" name="" placeholder="Поиск дома" value="">
+              <button class="ui-button ui-button-search">
+                <img src="./images/search.png" alt="Srch" title="Фильтр">
+              </button>
+              <span class="ui-close" id="ui-button-search"></span>
+            </div>
+
+            <button class="ui-button ui-button-search" style="margin-left: 10px">
               <img src="./images/search.png" alt="F" title="Фильтр">
             </button>
           </div>
 
-          <div class="map__news block close">
+          <div class="map__sale block">
+            <span class="ui-close" id="map__sale"></span>
             <span>ул. Центральная, 1В</span>
             <img class="house-pic" src="./images/house.png" alt="house.png" />
             <ul>
@@ -357,29 +364,52 @@
                 <span class="h">Общая площадь дома: </span>100 000 м<sup>2</sup>
               </li>
             </ul>
-            <div class="map__banner">
+            <div class="map__sale-banner">
               <span>Баннер</span>
             </div>
-            <span class="map__news-count">Объявлений: 10</span>
-            <div class="map__news-ad">
-              <p class="map__news-ad-left">
+            <span class="map__sale-count">Объявлений: 10</span>
+            <div class="map__sale-ad">
+              <p class="map__sale-ad-left">
                 <a href="http://bazarpnz.ru/ann/33211388/">http://bazarpnz.ru/ann/33211388/</a>
               </p>
-              <div class="map__news-ad-right">
-                <p class="map__news-ad-cost">1 400 000</p>
+              <div class="map__sale-ad-right">
+                <p class="map__sale-ad-cost">1 400 000</p>
               </div>
             </div>
-            <div class="map__news-ad">
-              <p class="map__news-ad-left">
+            <div class="map__sale-ad">
+              <p class="map__sale-ad-left">
                 <a href="http://bazarpnz.ru/ann/33211388/">http://bazarpnz.ru/ann/33211388/</a>
               </p>
-              <div class="map__news-ad-right">
-                <p class="map__news-ad-cost">2 650 000</p>
+              <div class="map__sale-ad-right">
+                <p class="map__sale-ad-cost">2 650 000</p>
               </div>
             </div>
             <button class="ui-button ui-button-more">
               <span>Узнать больше</span>
             </button>
+          </div>
+
+          <div class="map__news block">
+            <span class="ui-close" id="map__news"></span>
+            <h4 class="map__news-h">Новости ЖКХ в этом районе</h4>
+            <div class="container" style="max-height: 200px"> <!-- .scroll-pane -->
+              <div class="news">
+                <p class="news__date">20/12/2017, 10:50</p>
+                <p class="news__h">В Терновке из-за утечки без отопления остались 146 многоквартирных домов</p>
+              </div>
+              <div class="news">
+                <p class="news__date">20/12/2017, 10:50</p>
+                <p class="news__h">В Терновке из-за утечки без отопления остались 146 многоквартирных домов</p>
+              </div>
+              <div class="news">
+                <p class="news__date">20/12/2017, 10:50</p>
+                <p class="news__h">В Терновке из-за утечки без отопления остались 146 многоквартирных домов</p>
+              </div>
+              <div class="news">
+                <p class="news__date">20/12/2017, 10:50</p>
+                <p class="news__h">В Терновке из-за утечки без отопления остались 146 многоквартирных домов</p>
+              </div>
+            </div>
           </div>
         </aside>
 
