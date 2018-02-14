@@ -648,34 +648,24 @@ footer .oferta a:hover {
 
 .ui-button-search {
     margin-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-.ui-search {
-    background-color: white;
-    height: 35px;
-    border-radius: 3px;
-    box-shadow: 0px 0px 16px -2px rgba(0, 0, 0, 0.40);
-    z-index: 0;
-}
-
-.ui-search input{
-    padding: 8px 0 5px 10px;
+.ui-button-search input{
     box-sizing: border-box;
     border: 0;
+    height: 35px;
     font: 400 14px 'firasans';
     color: #777;
     border-radius: 3px;
     z-index: 1;
 }
 
-.ui-search button {
-    box-shadow: none;
-}
-
-.ui-search .ui-close {
+.ui-button-search .ui-close {
     top: 13px;
-    right: 10px;
-    margin-left: 6px;
+    left: 5px;
+    min-width: 0;
 }
 
 .ui-button span {
