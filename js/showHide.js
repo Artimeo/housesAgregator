@@ -24,11 +24,12 @@ $(document).ready(function()
     $('.ui-button-search input').css({display: 'inline-block'});
     $('.ui-button-search input').animate({width: '160'}, animationSpeed);
     $('.ui-button-search .ui-close').animate({width: '15'}, animationSpeed);
+    $('.ui-button-search input').focus();
     $('.ui-button-search').prop('disabled', true);
   });
   $('.ui-close#ui-button-search').click(function () {
     $('.ui-button-search .ui-close').animate({width: '0'}, animationSpeed);
-
+    //$('.ui-button-search .ui-close').css({display: 'none'});
     $('.ui-button-search input').animate({width: '0'}, animationSpeed, function() {
       $('.ui-button-search input').css({display: 'none'});
       $('.ui-button-search').removeAttr('style');

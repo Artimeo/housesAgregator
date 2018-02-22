@@ -643,7 +643,8 @@ footer .oferta a:hover {
 .ui-button-filter img,
 .ui-button-search img {
     position: relative;
-    top: 4px;
+    top: 2px;
+    vertical-align: middle;
 }
 
 .ui-button-search {
@@ -660,12 +661,15 @@ footer .oferta a:hover {
     color: #777;
     border-radius: 3px;
     z-index: 1;
+    vertical-align: middle;
 }
 
 .ui-button-search .ui-close {
-    top: 13px;
-    left: 5px;
+    display: inline-block;
+    top: 3px;
+    left: 2px;
     min-width: 0;
+    float: none;
 }
 
 .ui-button span {
@@ -715,6 +719,8 @@ footer .oferta a:hover {
     border: 1px solid #d7d7d7;
     border-radius: 3px;
     overflow: hidden;
+    margin-bottom: 0;
+    margin-block-end: 0;
 }
 .ui-radio label {
     font-weight: 400;
