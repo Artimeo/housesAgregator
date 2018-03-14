@@ -37,6 +37,13 @@ $(document).ready(function()
     });
   });
 
+  $('.ui-button-params-show').click(function(){
+    $('.ui-button-params-show .ui-button-arrow').toggleClass('open');
+  });
 
+
+  $('.ui-button-params-show').click(function() {
+    $('.filter__search-params').stop().slideToggle( 500, function() {});
+  });
 
 });

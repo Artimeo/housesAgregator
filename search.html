@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Агрегатор Недвижимости</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="./css/jquery.jscrollpane.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/select.css" />
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="./js/jquery.mousewheel.js"></script>
+    <script src="./js/jquery.jscrollpane.js"></script>
+    <script src="./js/select.js"></script>
+    <script type="text/javascript" src="./js/showHide.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+        $('.scroll-pane').jScrollPane({autoReinitialise: true, autoReinitialiseDelay: 1000, contentWidth: 390});
+    	});
+    </script>
+
+  </head>
+
+
+
+
+  <body>
+    <header>
+      <a href="./map.html" class="logo">
+        <img src="./images/logo.png" alt="logo.png" />
+      </a>
+      <nav class="tabs">
+        <a href="./map.html">Главная</a>
+        <a href="./index.html">Аналитика рынка</a>
+        <a href="./house-info.html">Новости</a>
+      </nav>
+
+      <a href="#" class="lk-show-menu">
+        <img src="./images/user-icon.png" alt="user-icon.png" /> <span>Вход / Регистрация</span>
+      </a>
+      <div class="lk-menu" role="dialog" style="display: none; opacity: 0">
+        <div class="lk-mask"></div>
+        <div class="block">
+          <h3 class="lk-h">
+            Вход
+          </h3>
+          <a href="#" class="lk-h">
+            Регистрация
+          </a>
+          <form class="lk-form" action="index.html" method="post">
+            <div class="lk-form__container">
+              <input type="text" name="" value="" placeholder="Email" class="lk-username" id="username">
+              <span class="lk-username-icon"></span>
+            </div>
+            <div class="lk-form__container">
+              <input type="password" name="" value="" placeholder="Пароль" class="lk-password" id="password">
+              <span class="lk-password-icon"></span>
+            </div>
+          </form>
+          <button class="ui-button ui-button-login">
+            <span>Войти</span>
+          </button>
+          <a href="#" class="lk-forget">Забыли пароль?</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-main page-content">
+
+      <section>
+        <nav class="breadcrumbs">
+          <a href="index.html">Главная</a><span> / ул. Центральная, 1В</span>
+        </nav>
+      </section>
+
+      <div class="filter__block block filter__search">
+        <div class="filter__search-container">
+          <div class="filter__search-filters">
+            <div class="row">
+              <form class="ui-radio marg-r">
+                <input id="houses-all" type="radio" name="gender" value="houses-all" checked>
+                <label for="houses-all">все</label>
+                <input id="houses-old" type="radio" name="gender" value="houses-old">
+                <label for="houses-old">вторичное жильё</label>
+                <input id="houses-new" type="radio" name="gender" value="houses-new">
+                <label for="houses-new">новостройки</label>
+              </form>
+              <form class="ui-radio">
+                <input id="type-all" type="radio" name="gender" value="type-all" checked>
+                <label for="type-all">все</label>
+                <input id="type-apartment" type="radio" name="gender" value="type-apartment">
+                <label for="type-apartment">квартира</label>
+                <input id="type-house" type="radio" name="gender" value="type-house">
+                <label for="type-house">дом</label>
+                <input id="type-land" type="radio" name="gender" value="type-land">
+                <label for="type-land">участок</label>
+              </form>
+            </div>
+            <div class="row marg-t">
+              <div class="select_mate" data-mate-select="active">
+                <select name="" onchange="" onclick="return false;" id="ui-select-layers" style="display: none">
+                  <option value="">Район</option>
+                  <option value="1">Арбеково</option>
+                  <option value="2">Спутник</option>
+                  <option value="3">Центр</option>
+                </select>
+                <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
+                <span onclick="open_select(this)" class="icon_select_mate" >
+                  <svg fill="#acacac" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                    <path d="M0-.75h24v24H0z" fill="none"/>
+                  </svg>
+                </span>
+                <div class="cont_list_select_mate">
+                  <ul class="cont_select_int">  </ul>
+                </div>
+              </div>
+              <div class="select_mate" data-mate-select="active">
+                <select name="" onchange="" onclick="return false;" id="ui-select-layers" style="display: none">
+                  <option value="">Количество комнат</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+                <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
+                <span onclick="open_select(this)" class="icon_select_mate" >
+                  <svg fill="#acacac" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                    <path d="M0-.75h24v24H0z" fill="none"/>
+                  </svg>
+                </span>
+                <div class="cont_list_select_mate">
+                  <ul class="cont_select_int">  </ul>
+                </div>
+              </div>
+              <form class="ui-input-double">
+                <input type="number" step="1" id="price-min" min="0" placeholder="Цена от, Р"/>
+                <input type="number" step="1" id="price-max" min="0" placeholder="До"/>
+              </form>
+            </div>
+            <div class="filter__search-params" style="display: none">
+              <div class="row">
+                <form class="ui-input-double">
+                  <input type="number" step="1" id="year-min" min="0" placeholder="Год от"/>
+                  <input type="number" step="1" id="year-max" min="0" placeholder="До"/>
+                </form>
+                <form class="ui-input-double">
+                  <input type="number" step="1" id="floor-min" min="0" placeholder="Этаж от"/>
+                  <input type="number" step="1" id="floor-max" min="0" placeholder="До"/>
+                </form>
+                <form class="ui-input-double">
+                  <input type="number" step="1" id="area-min" min="0" placeholder="Метраж от, м²"/>
+                  <input type="number" step="1" id="area-max" min="0" placeholder="До"/>
+                </form>
+              </div>
+              <form class="ui-checkbox row">
+                <input id="house-params-1" type="checkbox" value="house-params-1" checked>
+                <label for="house-params-1">год указан</label>
+                <input id="floor-not-first" type="checkbox" value="floor-not-first">
+                <label for="floor-not-first">не первый</label>
+                <input id="house-params-3" type="checkbox" value="house-params-3">
+                <label for="house-params-3">падает в цене</label>
+                <input id="house-params-2" type="checkbox" value="house-params-2">
+                <label for="house-params-2">скрыть агенства</label>
+                <input id="floor-not-last" type="checkbox" value="floor-not-last">
+                <label for="floor-not-last">не последний</label>
+                <input id="house-params-4" type="checkbox" value="house-params-4">
+                <label for="house-params-4">самые выгодные</label>
+              </form>
+            </div>
+          </div>
+          <div class="filter__search-find">
+            <form class="ui-radio">
+              <input id="buy" type="radio" name="gender" value="buy" checked>
+              <label for="buy">купить</label>
+              <input id="rent" type="radio" name="gender" value="sell">
+              <label for="rent">снять</label>
+            </form>
+            <button class="ui-button ui-button-search-big marg-t">
+              <img src="./images/search.png" alt="pen">
+              <span>Показать 1528 объявлений</span>
+            </button>
+          </div>
+        </div>
+        <div class="row ui-button-params">
+          <button class="ui-button ui-button-params-show row" type="button" name="button"><span>Все параметры</span>
+              <svg class="ui-button-arrow" fill="#acacac" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                <path d="M0-.75h24v24H0z" fill="none"/>
+              </svg>
+          </button>
+          <button class="ui-button ui-button-params-clear" type="button" name="button">Очистить</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-main">
+      <section>
+        <div class="row">
+          <div class="container" style="width: 60%; margin-right: 3%">
+            <h4>Объявления в этом доме (3)</h4>
+            <div class="block block__sales">
+              <div class="sale">
+                <div class="sale-left">
+                  <p class="sale__date">20/12/2017, 10:50</p>
+                  <p class="sale__h">Продам 2-комн. квартиру-студию по ул. Центральная 1В, 2/5 эт.</p>
+                  <ul class="sale__info row">
+    	              <li>
+    	                <span class="h">Комнат: </span>2012
+    	              </li>
+    	              <li>
+    	                <span class="h">Площадь: </span>43 м<sup>2</sup>
+    	              </li>
+    	              <li>
+    	                <span class="h">Жилая площадь: </span>18 м<sup>2</sup>
+    	              </li>
+    	              <li>
+    	                <span class="h">Этаж: </span>2
+    	              </li>
+    	            </ul>
+                  <p class="sale__owner">Собственник</p>
+                  <a href="#" class="sale__view">Посмотреть объявление</a>
+                </div>
+                <div class="sale-right">
+                  <p class="sale__cost">1 400 000 <img src="./images/rub.png" alt="Руб" style="height: 15px;" /> </p>
+                  <div class="sale__housepic"></div>
+                </div>
+              </div>
+
+              <div class="sale">
+                <div class="sale-left">
+                  <p class="sale__date">20/12/2017, 10:50</p>
+                  <p class="sale__h">Продаю 1-к.квартиру ул. Измайлова д.60 (44.12/17.54/14.08, 2/16К)</p>
+                  <ul class="sale__info row">
+    	              <li>
+    	                <span class="h">Комнат: </span>2012
+    	              </li>
+    	              <li>
+    	                <span class="h">Площадь: </span>44.1 м<sup>2</sup>
+    	              </li>
+    	              <li>
+    	                <span class="h">Жилая площадь: </span>17.5 м<sup>2</sup>
+    	              </li>
+    	              <li>
+    	                <span class="h">Этаж: </span>16
+    	              </li>
+    	            </ul>
+                  <p class="sale__owner">Собственник</p>
+                  <div class="sale__options">
+                    <a href="#" class="sale__options-view">Посмотреть объявление</a>
+                    <a href="#" class="sale__options-fav">Добавить в избранное</a>
+                    <a href="#" class="sale__options-ban">Пожаловаться</a>
+                  </div>
+                </div>
+                <div class="sale-right">
+                  <p class="sale__cost">1 750 000 <img src="./images/rub.png" alt="Руб" style="height: 15px;" /> </p>
+                  <div class="sale__housepic"></div>
+                </div>
+              </div>
+
+              <div class="sale">
+                <div class="sale-left">
+                  <p class="sale__date">20/12/2017, 10:50</p>
+                  <p class="sale__h">Продам 2-комн. квартиру-студию по ул. Центральная 1В, 2/5 эт.</p>
+                  <ul class="sale__info row">
+    	              <li>
+    	                <span class="h">Комнат: </span>2012
+    	              </li>
+    	              <li>
+    	                <span class="h">Площадь: </span>43 м<sup>2</sup>
+    	              </li>
+    	              <li>
+    	                <span class="h">Жилая площадь: </span>18 м<sup>2</sup>
+    	              </li>
+    	              <li>
+    	                <span class="h">Этаж: </span>2
+    	              </li>
+    	            </ul>
+                  <p class="sale__owner">Агенство</p>
+                  <a href="#" class="sale__view">Посмотреть объявление</a>
+                </div>
+                <div class="sale-right">
+                  <p class="sale__cost">2 800 000 <img src="./images/rub.png" alt="Руб" style="height: 15px;" /> </p>
+                  <div class="sale__housepic"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="container" style="width: 37%">
+            <h4>Новости ЖКХ в этом районе(3)</h4>
+            <div class="block block__news">
+              <div class="news">
+                <p class="news__date">20/12/2017, 10:50</p>
+                <p class="news__h">В Терновке из-за утечки без отопления остались 146 многоквартирных домов</p>
+              </div>
+              <div class="news">
+                <p class="news__date">20/12/2017, 10:50</p>
+                <p class="news__h">В Терновке из-за утечки без отопления остались 146 многоквартирных домов</p>
+              </div>
+              <div class="news">
+                <p class="news__date">20/12/2017, 10:50</p>
+                <p class="news__h">В Терновке из-за утечки без отопления остались 146 многоквартирных домов</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <address class="info">
+        <span>Агрегатор недвижимости, 2018</span>
+        <a href="http://rosoperator.ru/">МНПК Росоператор</a>
+      </address>
+      <div class="oferta">
+        <a href="#">Оферта</a>
+      </div>
+    </footer>
+
+  </body>
+</html>

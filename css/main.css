@@ -856,3 +856,143 @@ footer .oferta a:hover {
 .hidden {
     display: none;
 }
+
+
+/*SEARCH*/
+
+.filter__search {
+    padding: 15px 15px 5px 15px;
+    display: flex;
+    flex-direction: column;
+}
+.filter__search .ui-radio,
+.filter__search .ui-input-double {
+    display: inline-flex;
+}
+
+.block .cont_select_int {
+    margin: 0;
+}
+
+.filter__search .select_mate {
+    font-size: inherit;
+    box-shadow: none;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 1px solid #d7d7d7;
+    margin-right: 25px;
+    color: #333333;
+}
+
+.filter__search .icon_select_mate {
+    top: 7px;
+}
+
+.filter__search .selecionado_opcion {
+    padding: 7px 5% 5px 5%;
+}
+
+.filter__search-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter__search-filters {
+    //max-width: 772px;
+}
+
+.filter__search-params {
+    padding-top: 5px;
+}
+
+.filter__search-params .row{
+    justify-content: space-between;
+}
+
+.filter__search-params form.ui-input-double {
+    width: 238px;
+}
+
+.filter__search-params .ui-input-double input{
+    height: 25px;
+}
+
+.filter__search-params .row {
+    margin-top: 10px;
+}
+
+.filter__search .ui-checkbox label {
+    width: 236px;
+}
+
+form.ui-input-double {
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+    width: 300px;
+    overflow: hidden;
+}
+
+.ui-input-double input {
+    font-size: inherit;
+    min-width: 100px;
+    height: 33px;
+    border: none;
+    padding: 0 10px;
+}
+
+.ui-input-double input:first-child {
+    border-right: 1px solid #d7d7d7;
+}
+
+.ui-button-params.row {
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.ui-button-arrow{
+    transition: all 320ms;
+}
+
+.ui-button-arrow.open{
+    transform: rotate(180deg);
+}
+
+.filter__search .ui-button-params-show,
+.filter__search .ui-button-params-clear {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0 40px 0 0;
+    color: #818181;
+}
+
+.filter__search-find {
+    display: flex;
+    flex-direction: column;
+}
+
+.ui-button-search-big {
+    box-shadow: none;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+.page-main {
+    margin: auto;
+    min-width: inherit;
+    max-width: 1050px;
+}
+
+.ui-button-search-big img {
+    position: relative;
+    top: 3px;
+    margin: 0 3px;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+sup {
+    line-height: 0;
+}
