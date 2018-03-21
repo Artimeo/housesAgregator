@@ -68,7 +68,7 @@ header .logo {
 }
 
 header .tabs {
-    width: 350px;
+    width: 450px;
     display: flex;
     justify-content: space-between;
 }
