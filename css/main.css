@@ -83,14 +83,15 @@ header .lk-show-menu img {
     top: 3px;
 }
 
-.lk-menu {
+.lk-menu, .err {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 5;
 }
 
-.lk-menu .block {
+.lk-menu .block,
+.err .block {
     position: fixed;
     padding: 30px;
     width: 360px;
@@ -101,7 +102,16 @@ header .lk-show-menu img {
     z-index: 1;
 }
 
-.lk-mask {
+.err .block {
+    height: auto;
+    top: calc(50% - 300px);
+}
+
+.err input {
+    cursor: text!important;
+}
+
+.lk-mask, .err-mask {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -110,12 +120,22 @@ header .lk-show-menu img {
     z-index: 0;
 }
 
-.lk-h {
+.lk-h, .err-h {
     font-weight: 800;
     font-size: 18px;
     margin-top: 10px;
     margin-right: 30px;
     display: inline-block;
+}
+
+.err-h {
+    font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.err-h:first-child {
+    margin-top: 5px;
 }
 
 header a.lk-h {
@@ -143,15 +163,17 @@ header a.lk-forget:hover {
     margin-top: 60px;
 }
 
-.lk-form__container {
+.lk-form__container,
+.err-form__container {
     position: relative;
     white-space: normal;
     vertical-align: middle;
     width: 100%;
 }
 
-.lk-form input {
-    display: block;
+.lk-form input,
+.err-form input,
+.err-form textarea {
     font-size: 16px;
     padding-left: 10px;
     width: calc(100% - 10px);
@@ -161,8 +183,21 @@ header a.lk-forget:hover {
     border-radius: 3px;
     color: #cccccc;
     cursor: pointer;
+    color: black;
 }
-.lk-form input:focus {
+
+.err-form textarea {
+    min-width: calc(100% - 10px);
+    max-width: calc(100% - 10px);
+    min-height: 25px;
+    max-height: 74px;
+    padding-top: 9px;
+    padding-bottom: 1px;
+    font-family: sans-serif;
+}
+
+.lk-form input:focus,
+.err-form input:focus {
     cursor: text;
 }
 .lk-form input::-webkit-input-placeholder {color: #cccccc;}
@@ -507,6 +542,10 @@ footer .oferta a:hover {
     white-space: nowrap;
 }
 
+.sale__cost img {
+    margin-left: 0.25em;
+}
+
 .sale__owner {
     color: #818181;
     font-weight: normal;
@@ -693,7 +732,8 @@ footer .oferta a:hover {
     margin: 0 3px;
 }
 
-.ui-button-login {
+.ui-button-login,
+.ui-button-senderror {
     display: block;
     font-size: 16px;
     margin: 30px auto 15px;
@@ -860,6 +900,10 @@ footer .oferta a:hover {
 
 /*SEARCH*/
 
+.block .cont_select_int {
+    margin: 0;
+}
+
 .filter__search {
     padding: 15px 15px 5px 15px;
     display: flex;
@@ -868,10 +912,6 @@ footer .oferta a:hover {
 .filter__search .ui-radio,
 .filter__search .ui-input-double {
     display: inline-flex;
-}
-
-.block .cont_select_int {
-    margin: 0;
 }
 
 .filter__search .select_mate {
@@ -897,10 +937,6 @@ footer .oferta a:hover {
     justify-content: space-between;
 }
 
-.filter__search-filters {
-    //max-width: 772px;
-}
-
 .filter__search-params {
     padding-top: 5px;
 }
@@ -923,6 +959,11 @@ footer .oferta a:hover {
 
 .filter__search .ui-checkbox label {
     width: 236px;
+}
+
+.filter__search-find {
+    display: flex;
+    flex-direction: column;
 }
 
 form.ui-input-double {
@@ -966,10 +1007,6 @@ form.ui-input-double {
     color: #818181;
 }
 
-.filter__search-find {
-    display: flex;
-    flex-direction: column;
-}
 
 .ui-button-search-big {
     box-shadow: none;

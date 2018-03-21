@@ -12,6 +12,43 @@ $(document).ready(function()
     });
   });
 
+
+
+
+
+  $(document).keydown(function (e) {
+		if ((e.ctrlKey && e.keyCode == 13) || (e.metaKey && e.keyCode == 13)) {
+			e.preventDefault();
+			var text_err = "";
+	    if (window.getSelection) {
+	        text_err = window.getSelection().toString();
+	    } else if (document.selection && document.selection.type != "Control") {
+	        text_err = document.selection.createRange().text;
+	    }
+
+      $('.err').css({display: 'block'});
+      $('.err').animate({opacity: '1'}, animationSpeed);
+      $('#err-link').val(document.location.href);
+
+	    if(text_err!==''){
+        $('#err-description').val(text_err);
+      }
+    }
+	});
+
+  $('.err-mask, .ui-close').click(function () {
+    $('.err').animate({opacity: '0'}, animationSpeed, function() {
+      $('.err').css({display: 'none'});
+    });
+  });
+
+
+
+
+
+
+
+
   $('.ui-close#map__sale').click(function () {
     $('.map__sale').css({display: 'none'});
   });
@@ -37,12 +74,9 @@ $(document).ready(function()
     });
   });
 
-  $('.ui-button-params-show').click(function(){
-    $('.ui-button-params-show .ui-button-arrow').toggleClass('open');
-  });
-
 
   $('.ui-button-params-show').click(function() {
+    $('.ui-button-params-show .ui-button-arrow').toggleClass('open');
     $('.filter__search-params').stop().slideToggle( 500, function() {});
   });
 

@@ -44,6 +44,7 @@
       <div class="lk-menu" role="dialog" style="display: none; opacity: 0">
         <div class="lk-mask"></div>
         <div class="block">
+          <span class="ui-close" id="lk-menu"></span>
           <h3 class="lk-h">
             Вход
           </h3>
@@ -67,6 +68,34 @@
         </div>
       </div>
     </header>
+
+    <div class="err" role="dialog" style="display: none; opacity: 0">
+      <div class="err-mask"></div>
+      <div class="block">
+        <span class="ui-close"></span>
+        <form class="err-form" action="index.html" method="post">
+          <h3 class="err-h">Укажите ошибку:</h3>
+          <div class="err-form__container">
+            <input type="text" name="" value="" id="err-description">
+          </div>
+          <h3 class="err-h">Комментарий:</h3>
+          <div class="err-form__container">
+            <textarea id="err-commit" style="height: 50px;"></textarea>
+          </div>
+          <h3 class="err-h">Адрес страницы:</h3>
+          <div class="err-form__container">
+            <input type="text" style="color: #818181" id="err-link" readonly>
+          </div>
+          <h3 class="err-h">Почта:</h3>
+          <div class="err-form__container">
+            <input type="text" name="" value="" id="err-mail">
+          </div>
+          <button class="ui-button ui-button-senderror">
+            <span>Отправить</span>
+          </button>
+        </form>
+      </div>
+    </div>
 
     <div class="page-main page-content">
 
